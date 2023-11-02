@@ -3,6 +3,7 @@ package com.betrybe.agrix.ebytr.staff.advice;
 import com.betrybe.agrix.ebytr.staff.exception.CropNotFoundException;
 import com.betrybe.agrix.ebytr.staff.exception.FarmNotFoundException;
 import com.betrybe.agrix.ebytr.staff.exception.FertilizerNotFoundException;
+import com.betrybe.agrix.ebytr.staff.exception.PersonNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GeneralControllerAdvice {
 
   /**
-   * Métod que trata o lançamento de uma exceção de fazenda não encontrada pelo id.
+   * Método que trata o lançamento de uma exceção de fazenda não encontrada pelo id.
    *
    * @param farmNotFoundException excecao lançada no farmSercide.
    * @return 404 e uma mensagem.
@@ -60,4 +61,18 @@ public class GeneralControllerAdvice {
         .body(exception1.getMessage());
   }
 
+  /**
+   * cria escuta de exceção por person not found.
+   *
+   * @param personNotFoundException runtime.
+   * @return httpresponse.
+   */
+  @ExceptionHandler(PersonNotFoundException.class)
+  public ResponseEntity<String> handlePersonNotFoundException(PersonNotFoundException
+      personNotFoundException) {
+    Exception exception1 = new Exception("Pessoa não encontrada!");
+    return ResponseEntity
+        .status(HttpStatus.NOT_FOUND)
+        .body(exception1.getMessage());
+  }
 }
