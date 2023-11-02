@@ -2,6 +2,7 @@ package com.betrybe.agrix.ebytr.staff.entity;
 
 
 import com.betrybe.agrix.ebytr.staff.security.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +20,7 @@ import org.springframework.security.core.userdetails.UserDetails;
  */
 @Entity
 @Table(name = "people")
-public class Person implements UserDetails {
+public class Person implements UserDetails, GrantedAuthority {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +31,7 @@ public class Person implements UserDetails {
 
   private String password;
 
-  private Role role;
+  private String role;
 
   public Person() {
   }
@@ -43,7 +44,7 @@ public class Person implements UserDetails {
    * @param password string.
    * @param role Role.
    */
-  public Person(Long id, String username, String password, Role role) {
+  public Person(Long id, String username, String password, String role) {
     this.id = id;
     this.username = username;
     this.password = password;
@@ -77,11 +78,11 @@ public class Person implements UserDetails {
     this.password = password;
   }
 
-  public Role getRole() {
+  public String getRole() {
     return role;
   }
 
-  public void setRole(Role role) {
+  public void setRole(String role) {
     this.role = role;
   }
 
@@ -101,7 +102,7 @@ public class Person implements UserDetails {
 
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return List.of();
+    return List.of(this);
   }
 
 
@@ -124,5 +125,12 @@ public class Person implements UserDetails {
   public boolean isEnabled() {
     return true;
   }
+
+  @JsonIgnore
+  @Override
+  public String getAuthority() {
+    return this.getRole();
+  }
+
 }
 

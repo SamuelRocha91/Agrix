@@ -11,7 +11,7 @@ import com.betrybe.agrix.ebytr.staff.security.Role;
  * @param password String.
  * @param role autorização.
  */
-public record PersonDto(String username, String password, Role role) {
+public record PersonDto(String username, String password, String role) {
 
   /**
    * converte de dto pra entidade.

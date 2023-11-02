@@ -1,5 +1,6 @@
 package com.betrybe.agrix.ebytr.staff.util;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -14,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 /**
  * cria classe de configurações de segurança da api.
@@ -23,6 +25,13 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true)
 public class SecurityConfiguration {
+
+  private final Filter securityFilter;
+
+  @Autowired
+  public SecurityConfiguration(Filter securityFilter) {
+    this.securityFilter = securityFilter;
+  }
 
   /**
    * cria um bean para implementação do filtro de segurança.
@@ -41,7 +50,8 @@ public class SecurityConfiguration {
             .requestMatchers(HttpMethod.POST, "/persons").permitAll()
             .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
             .anyRequest().authenticated()
-        ).build();
+        ).addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
+        .build();
   }
 
 
