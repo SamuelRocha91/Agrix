@@ -52,7 +52,7 @@ Siga las instrucciones a continuación para configurar y ejecutar el proyecto lo
 ### 1. Clona el repositorio
 
 ```bash
-git clone https://github.com/seu-usuario/agrix.git
+git clone git@github.com:SamuelRocha91/Agrix.git
 ```
 
 ### 2. Navega hasta el directorio del proyecto
