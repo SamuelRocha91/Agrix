@@ -52,7 +52,7 @@
 ### 1. استنساخ المستودع
 
 ```bash
-git clone https://github.com/your-username/agrix.git
+git clone git@github.com:SamuelRocha91/Agrix.git
 ```
 
 ### 2. انتقل إلى دليل المشروع
