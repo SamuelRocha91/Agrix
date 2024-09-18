@@ -52,7 +52,7 @@ Agrix 项目是 Trybe 的 Web 开发课程中的一个评估项目。该项目�
 ### 1. 克隆仓库
 
 ```bash
-git clone https://github.com/your-username/agrix.git
+git clone git@github.com:SamuelRocha91/Agrix.git
 ```
 
 ### 2. 进入项目目录
