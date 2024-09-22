@@ -1,4 +1,4 @@
-# 🌱 Agrix - Управление и Мониторинг Ферм
+# <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 🌱 Agrix - Управление и Мониторинг Ферм <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" />
 
 ![Статус: В Разработке](https://img.shields.io/badge/status-in%20development-yellow)
 
@@ -140,3 +140,9 @@ mvn test
 - **Рефакторинг Слоёв**: Улучшение разделения между слоями контроля, сервиса и хранения.
 - **Улучшения Docker**: Настройка конфигурации Docker для оптимизации сборки и выполнения приложения.
 - **Автоматизированное Тестирование**: Расширение покрытия автоматизированных тестов для обеспечения большей надёжности приложения.
+
+## Другие проекты
+
+- 🗳️ [Sistema de Votação](https://github.com/SamuelRocha91/sistemaDeVotacao/blob/main/README_ru.md)
+- 🏛️ [Localizador de museus](https://github.com/SamuelRocha91/localizadorDeMuseus/blob/main/README_ru.md)
+- 📃 [Regras de progressão](https://github.com/SamuelRocha91/project_rule_of_progression/blob/main/README_ru.md)
