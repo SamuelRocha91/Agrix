@@ -1,4 +1,4 @@
-# 🌱 Agrix - Farm Management and Monitoring
+# <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 🌱 Agrix - Farm Management and Monitoring <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" />
 
 ![Status: In Development](https://img.shields.io/badge/status-in%20development-yellow)
 
@@ -140,3 +140,9 @@ The project is under development, and the following improvements are planned:
 - **Layer Refactoring**: Improve the separation between control, service, and persistence layers.
 - **Docker Enhancements**: Adjust Docker configuration to optimize the build and execution of the application.
 - **Automated Testing**: Expand automated test coverage to ensure greater robustness of the application.
+
+- ## Other Projects
+
+- 🗳️ [Sistema de Votação](https://github.com/SamuelRocha91/sistemaDeVotacao/blob/main/README_en.md)
+- 🏛️ [Localizador de museus](https://github.com/SamuelRocha91/localizadorDeMuseus/blob/main/README_en.md)
+- 📃 [Regras de progressão](https://github.com/SamuelRocha91/project_rule_of_progression/blob/main/README_en.md)
