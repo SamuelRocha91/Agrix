@@ -1,16 +1,8 @@
-# 🌱 Agrix - إدارة ومراقبة المزارع
+# <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 🌱 Agrix - إدارة ومراقبة المزارع <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" />
 
 ![الحالة: قيد التطوير](https://img.shields.io/badge/status-in%20development-yellow)
 
-<h2>🌐</h2>
-<ul>
-  <li><a href="https://github.com/SamuelRocha91/Agrix" target="_blank">Português</a></li>
-  <li><a href="https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md" target="_blank">Español</a></li>
-  <li><a href="https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md" target="_blank">English</a></li>
-  <li><a href="https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md" target="_blank">Русский</a></li>
-  <li><a href="https://github.com/SamuelRocha91/Agrix/blob/main/README_ch.md" target="_blank">中文</a></li>
-  <li><a href="https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md" target="_blank">العربية</a></li>
-</ul>
+## 🌐 [![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) [![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) [![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) [![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) [![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/kotlinVirtualMenu) [![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
 
 ## 📜 مقدمة
 
@@ -139,4 +131,12 @@ mvn test
 
 - **إعادة هيكلة الطبقات**: تحسين الفصل بين طبقات التحكم والخدمات والاحتفاظ.
 - **تحسين Docker**: تعديل تكوين Docker لتحسين بناء وتشغيل التطبيق.
-- **الاختبارات التلقائية**: توسيع نطاق تغطية الاختبارات التلقائية لضمان قوة التطبيق.
+- **الاختبارات التلقائية**: توسيع نطاق تغطية الاختبارات التلقائية لضمان قوة التطبيق
+
+
+## مشاريع أخرى
+
+
+- 🗳️ [Sistema de Votação](https://github.com/SamuelRocha91/sistemaDeVotacao/blob/main/README_ar.md)
+- 🏛️ [Localizador de museus](https://github.com/SamuelRocha91/localizadorDeMuseus/blob/main/README_ar.md)
+- 📃 [Regras de progressão](https://github.com/SamuelRocha91/project_rule_of_progression/blob/main/README_ar.md)
