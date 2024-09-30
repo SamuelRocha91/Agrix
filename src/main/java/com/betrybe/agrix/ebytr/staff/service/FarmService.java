@@ -1,84 +1,80 @@
 package com.betrybe.agrix.ebytr.staff.service;
 
+import com.betrybe.agrix.ebytr.staff.dto.FarmDto;
 import com.betrybe.agrix.ebytr.staff.entity.Crop;
 import com.betrybe.agrix.ebytr.staff.entity.Farm;
+import com.betrybe.agrix.ebytr.staff.exception.ErrorMessages;
 import com.betrybe.agrix.ebytr.staff.exception.FarmNotFoundException;
 import com.betrybe.agrix.ebytr.staff.repository.CropRepository;
 import com.betrybe.agrix.ebytr.staff.repository.FarmRepository;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * Cria a camada service de farm.
- *
+ * The type Farm service.
  */
 @Service
 public class FarmService {
 
   private final FarmRepository farmRepository;
-
   private final CropRepository cropRepository;
 
+  /**
+   * Instantiates a new Farm service.
+   *
+   * @param repository     the repository
+   * @param cropRepository the crop repository
+   */
   @Autowired
-  public FarmService(FarmRepository farmRepository, CropRepository cropRepository) {
-    this.farmRepository = farmRepository;
+  public FarmService(FarmRepository repository, CropRepository cropRepository) {
+    this.farmRepository = repository;
     this.cropRepository = cropRepository;
   }
 
-
-  public Farm createFarm(Farm farm) {
-    return farmRepository.save(farm);
-  }
-
-  public List<Farm> getAllFarms() {
-    return farmRepository.findAll();
+  /**
+   * Save farm farm dto.
+   *
+   * @param farm the farm
+   * @return the farm dto
+   */
+  public FarmDto saveFarm(Farm farm) {
+    Farm farmSaved = farmRepository.save(farm);
+    return FarmDto.entityFromDto(farm);
   }
 
   /**
-   * encontra fazendas pelo id.
+   * Gets all farms.
    *
-   * @param id recebe um id long.
-   * @return um erro em caso de nao ser encontrada ou a propria fazenda.
+   * @return the all farms
    */
-  public Farm findFarmById(Long id) {
-    Optional<Farm> farm = farmRepository.findById(id);
-    if (farm.isEmpty()) {
-      throw new FarmNotFoundException();
-    }
-    return farm.get();
+  public List<FarmDto> getAllFarms() {
+    return farmRepository.findAll()
+        .stream().map(FarmDto::entityFromDto).toList();
   }
 
   /**
-   * cria crop por fazenda.
+   * Gets farm.
    *
-   * @param farmId long de uma fazenda.
-   * @param crop dados da plantação.
-   * @return a plantação cadastrada ou lança erro.
+   * @param id the id
+   * @return the farm
    */
-  public Crop createCropByFarm(Long farmId, Crop crop) {
-    Optional<Farm> findFarm = farmRepository.findById(farmId);
-    if (findFarm.isEmpty()) {
-      throw new FarmNotFoundException();
-    }
-    Farm farm = findFarm.get();
+  public Farm getFarm(Long id) {
+    return farmRepository.findById(id)
+        .orElseThrow(() -> new FarmNotFoundException(ErrorMessages.FARM_NOT_FOUND));
+  }
+
+  /**
+   * Create farm crop crop.
+   *
+   * @param id   the id
+   * @param crop the crop
+   * @return the crop
+   */
+  public Crop createFarmCrop(Long id, Crop crop) {
+    Farm farm = getFarm(id);
     crop.setFarm(farm);
     return cropRepository.save(crop);
   }
 
-  /**
-   * busca a existência do cadstro da fazenda. Lança erro ou retorna suas plantações.
-   *
-   * @param farmId id long da fazenda.
-   * @return a lista ou lança o erro.
-   */
-  public List<Crop> getAllcropsByfarm(Long farmId) {
-    Optional<Farm> findFarm = farmRepository.findById(farmId);
-    if (findFarm.isEmpty()) {
-      throw new FarmNotFoundException();
-    }
-    List<Crop> crop = findFarm.get().getCrops();
-    return crop;
-  }
 }

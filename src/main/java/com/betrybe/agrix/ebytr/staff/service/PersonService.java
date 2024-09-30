@@ -38,22 +38,31 @@ public class PersonService implements UserDetailsService {
     return person.get();
   }
 
+  /**
+   * Returns a person for a given username.
+   */
+  public Person getPersonByUsername(String username) {
+    Optional<Person> person = personRepository.findByUsername(username);
+
+    if (person.isEmpty()) {
+      throw new PersonNotFoundException();
+    }
+
+    return person.get();
+  }
 
   /**
    * Creates a new person.
    */
   public Person create(Person person) {
-    String hashedPassword = new BCryptPasswordEncoder().encode(person.getPassword());
-    person.setPassword(hashedPassword);
+    String hashPassword = new BCryptPasswordEncoder().encode(person.getPassword());
+    person.setPassword(hashPassword);
     return personRepository.save(person);
   }
 
-  /**
-   * Returns a person for a given username.
-   *
-   */
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    return personRepository.findByUsername(username);
+    return personRepository.findByUsername(username)
+        .orElseThrow(() -> new UsernameNotFoundException(username));
   }
 }
