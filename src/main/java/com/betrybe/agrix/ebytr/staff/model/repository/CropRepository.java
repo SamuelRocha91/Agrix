@@ -1,4 +1,4 @@
-package com.betrybe.agrix.ebytr.staff.repository;
+package com.betrybe.agrix.ebytr.staff.model.repository;
 
 import com.betrybe.agrix.ebytr.staff.entity.Crop;
 import java.time.LocalDate;

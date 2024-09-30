@@ -4,7 +4,7 @@ import com.betrybe.agrix.ebytr.staff.entity.Crop;
 import com.betrybe.agrix.ebytr.staff.entity.Fertilizer;
 import com.betrybe.agrix.ebytr.staff.exception.CropNotFoundException;
 import com.betrybe.agrix.ebytr.staff.exception.ErrorMessages;
-import com.betrybe.agrix.ebytr.staff.repository.CropRepository;
+import com.betrybe.agrix.ebytr.staff.model.repository.CropRepository;
 import java.time.LocalDate;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
