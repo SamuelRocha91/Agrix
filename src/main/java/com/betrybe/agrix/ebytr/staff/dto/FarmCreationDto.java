@@ -3,23 +3,16 @@ package com.betrybe.agrix.ebytr.staff.dto;
 import com.betrybe.agrix.ebytr.staff.entity.Farm;
 
 /**
- * cria dto de farm para recebimento de dados do cliente.
- *
- * @param name uma string com o nome da fazenda.
- * @param size DOuble o tamanho.
+ * The type Farm creation dto.
  */
 public record FarmCreationDto(String name, Double size) {
 
   /**
-   * converte um farmDTo recebido numa entidade.
+   * From entity farm.
    *
-   * @return FArm.
+   * @return the farm
    */
-  public Farm toEntity() {
-    Farm farm = new Farm();
-    farm.setName(name);
-    farm.setSize(size);
-    return farm;
+  public Farm fromEntity() {
+    return new Farm(name, size);
   }
-
 }

@@ -1,28 +1,24 @@
 package com.betrybe.agrix.ebytr.staff.dto;
 
-import com.betrybe.agrix.ebytr.staff.entity.Fertilizer;
 import com.betrybe.agrix.ebytr.staff.entity.Person;
-import com.betrybe.agrix.ebytr.staff.security.Role;
 
 /**
- * Dto de recebimento de dados sobre cadastro.
- *
- * @param username String.
- * @param password String.
- * @param role autorização.
+ * The type Person dto.
  */
-public record PersonDto(String username, String password, String role) {
+public record PersonDto(Long id, String username, String role) {
 
   /**
-   * converte de dto pra entidade.
+   * Entity from dto person dto.
    *
-   * @return.
+   * @param person the person
+   * @return the person dto
    */
-  public Person toEntity() {
-    Person person = new Person();
-    person.setUsername(username);
-    person.setPassword(password);
-    person.setRole(role);
-    return person;
+  public static PersonDto entityFromDto(Person person) {
+    return new PersonDto(
+        person.getId(),
+        person.getUsername(),
+        person.getRole()
+    );
   }
+
 }

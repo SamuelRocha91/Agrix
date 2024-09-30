@@ -1,10 +1,8 @@
 package com.betrybe.agrix.ebytr.staff.dto;
 
+
 /**
- * cria dto para manuseio do token.
- *
- * @param token String.
+ * The type Token dto.
  */
 public record TokenDto(String token) {
-
 }
