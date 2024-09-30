@@ -1,14 +1,12 @@
-package com.betrybe.agrix.ebytr.staff.repository;
+package com.betrybe.agrix.ebytr.staff.model.repository;
 
-import com.betrybe.agrix.ebytr.staff.entity.Farm;
+import com.betrybe.agrix.ebytr.staff.model.entity.Farm;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * cria um repositorio para farm.
- *
+ * The interface Farm repository.
  */
 @Repository
 public interface FarmRepository extends JpaRepository<Farm, Long> {
-
 }

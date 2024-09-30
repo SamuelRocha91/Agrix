@@ -1,11 +1,11 @@
 package com.betrybe.agrix.ebytr.staff.controller;
 
-import com.betrybe.agrix.ebytr.staff.dto.CropDto;
+import com.betrybe.agrix.ebytr.staff.dto.CropCreationDto;
 import com.betrybe.agrix.ebytr.staff.dto.CropDtoResponse;
 import com.betrybe.agrix.ebytr.staff.dto.FarmCreationDto;
-import com.betrybe.agrix.ebytr.staff.dto.FarmDtoResponse;
-import com.betrybe.agrix.ebytr.staff.entity.Crop;
-import com.betrybe.agrix.ebytr.staff.entity.Farm;
+import com.betrybe.agrix.ebytr.staff.dto.FarmDto;
+import com.betrybe.agrix.ebytr.staff.model.entity.Crop;
+import com.betrybe.agrix.ebytr.staff.model.entity.Farm;
 import com.betrybe.agrix.ebytr.staff.service.FarmService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,90 +20,89 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Cria classe controller de farm.
- *
+ * The type Farm controller.
  */
 @RestController
 @RequestMapping("/farms")
-@Secured({"ADMIN", "USER", "MANAGER"})
 public class FarmController {
 
   private final FarmService farmService;
 
+  /**
+   * Instantiates a new Farm controller.
+   *
+   * @param farmService the farm service
+   */
   @Autowired
   public FarmController(FarmService farmService) {
     this.farmService = farmService;
   }
 
   /**
-   * rota de inserção de nova fazenda.
+   * Gets farms.
    *
-   * @param farmCreationDto dto para recebimento dos dados.
-   * @return a fazenda cadastrada.
-   */
-  @PostMapping()
-  public ResponseEntity<FarmDtoResponse> insertFarm(@RequestBody FarmCreationDto farmCreationDto) {
-    Farm farm = farmService.createFarm(farmCreationDto.toEntity());
-    FarmDtoResponse farmDtoResponse = new FarmDtoResponse(farm.getId(),
-        farm.getName(), farm.getSize());
-    return ResponseEntity.status(HttpStatus.CREATED).body(farmDtoResponse);
-  }
-
-  /**
-   * Rota de acesso a todas as fazendas cadastradas.
-   *
-   * @return uma lista de fazendas
+   * @return the farms
    */
   @GetMapping
-  public ResponseEntity<List<FarmDtoResponse>> getFarms() {
-    List<Farm> farm = farmService.getAllFarms();
-    List<FarmDtoResponse> farmDtoResponse = farm.stream().map((e)
-        -> new FarmDtoResponse(e.getId(), e.getName(), e.getSize())).toList();
-    return ResponseEntity.status(HttpStatus.OK).body(farmDtoResponse);
+  @Secured({"ROLE_USER", "ROLE_ADMIN", "ROLE_MANAGER"})
+  public ResponseEntity<List<FarmDto>> getFarms() {
+    return ResponseEntity.status(HttpStatus.OK).body(farmService.getAllFarms());
   }
 
   /**
-   * rota de acesso as fazendas por id.
+   * Gets farm by id.
    *
-   * @param id long.
-   * @return a fazenda busca pelo id.
+   * @param id the id
+   * @return the farm by id
    */
   @GetMapping("/{id}")
-  public ResponseEntity<FarmDtoResponse> getFarmById(@PathVariable Long id) {
-    Farm farm = farmService.findFarmById(id);
-    FarmDtoResponse farmDtoResponse = new FarmDtoResponse(id, farm.getName(), farm.getSize());
-    return ResponseEntity.status(HttpStatus.OK).body(farmDtoResponse);
+  public ResponseEntity<FarmDto> getFarmById(@PathVariable Long id) {
+    Farm farm = farmService.getFarm(id);
+    return ResponseEntity.status(HttpStatus.OK)
+        .body(FarmDto.entityFromDto(farm));
   }
 
   /**
-   * rota para cadastro de plantações.
+   * Gets crop by farm.
    *
-   * @param farmId id da fazenda a ser cadastrada.
-   * @param cropDto dados da plantação.
-   * @return a plantação cadastrada.
-   */
-  @PostMapping("/{farmId}/crops")
-  public ResponseEntity<CropDtoResponse> createCropByFarm(@PathVariable Long farmId,
-      @RequestBody CropDto cropDto) {
-    Crop crop = farmService.createCropByFarm(farmId, cropDto.toEntity());
-    CropDtoResponse cropDtoResponse = new CropDtoResponse(crop.getId(),
-        crop.getName(), crop.getPlantedArea(), crop.getFarm().getId(),
-        crop.getPlantedDate(), crop.getHarvestDate());
-    return ResponseEntity.status(HttpStatus.CREATED).body(cropDtoResponse);
-  }
-
-  /**
-   * rota para receber dados de plantações de uma fazenda.
-   *
-   * @param farmId long, id da fazenda.
-   * @return uma lista com as plantaçoes.
+   * @param farmId the farm id
+   * @return the crop by farm
    */
   @GetMapping("/{farmId}/crops")
-  public ResponseEntity<List<CropDtoResponse>> getCropsByFarmId(@PathVariable Long farmId) {
-    List<Crop> crop = farmService.getAllcropsByfarm(farmId);
-    List<CropDtoResponse> cropDtoResponse = crop.stream().map((e) -> new CropDtoResponse(e.getId(),
-        e.getName(), e.getPlantedArea(), e.getFarm().getId(),
-        e.getPlantedDate(), e.getHarvestDate())).toList();
-    return ResponseEntity.status(HttpStatus.OK).body(cropDtoResponse);
+  public ResponseEntity<List<CropDtoResponse>> getCropByFarm(@PathVariable Long farmId) {
+    return ResponseEntity.status(HttpStatus.OK)
+        .body(
+            farmService.getFarm(farmId)
+                .getCrops().stream().map(CropDtoResponse::entityFromDto).toList()
+        );
+  }
+
+  /**
+   * Post farm response entity.
+   *
+   * @param farm the farm
+   * @return the response entity
+   */
+  @PostMapping
+  public ResponseEntity<FarmDto> postFarm(@RequestBody FarmCreationDto farm) {
+    FarmDto farmSaved = farmService.saveFarm(farm.fromEntity());
+    return ResponseEntity.status(HttpStatus.CREATED).body(farmSaved);
+  }
+
+  /**
+   * Post crop response entity.
+   *
+   * @param farmId the farm id
+   * @param crop   the crop
+   * @return the response entity
+   */
+  @PostMapping("/{farmId}/crops")
+  public ResponseEntity<CropDtoResponse> postCrop(
+      @PathVariable Long farmId,
+      @RequestBody CropCreationDto crop
+  ) {
+    Crop cropSaved = farmService.createFarmCrop(farmId, crop.fromEntity());
+    return ResponseEntity.status(HttpStatus.CREATED)
+        .body(CropDtoResponse.entityFromDto(cropSaved));
   }
 }

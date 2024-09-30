@@ -1,8 +1,9 @@
 package com.betrybe.agrix.ebytr.staff.service;
 
-import com.betrybe.agrix.ebytr.staff.entity.Person;
+import com.betrybe.agrix.ebytr.staff.model.entity.Person;
+import com.betrybe.agrix.ebytr.staff.exception.ErrorMessages;
 import com.betrybe.agrix.ebytr.staff.exception.PersonNotFoundException;
-import com.betrybe.agrix.ebytr.staff.repository.PersonRepository;
+import com.betrybe.agrix.ebytr.staff.model.repository.PersonRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -32,28 +33,37 @@ public class PersonService implements UserDetailsService {
     Optional<Person> person = personRepository.findById(id);
 
     if (person.isEmpty()) {
-      throw new PersonNotFoundException();
+      throw new PersonNotFoundException(ErrorMessages.PERSON_NOT_FOUND);
     }
 
     return person.get();
   }
 
+  /**
+   * Returns a person for a given username.
+   */
+  public Person getPersonByUsername(String username) {
+    Optional<Person> person = personRepository.findByUsername(username);
+
+    if (person.isEmpty()) {
+      throw new PersonNotFoundException(ErrorMessages.PERSON_NOT_FOUND);
+    }
+
+    return person.get();
+  }
 
   /**
    * Creates a new person.
    */
   public Person create(Person person) {
-    String hashedPassword = new BCryptPasswordEncoder().encode(person.getPassword());
-    person.setPassword(hashedPassword);
+    String hashPassword = new BCryptPasswordEncoder().encode(person.getPassword());
+    person.setPassword(hashPassword);
     return personRepository.save(person);
   }
 
-  /**
-   * Returns a person for a given username.
-   *
-   */
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-    return personRepository.findByUsername(username);
+    return personRepository.findByUsername(username)
+        .orElseThrow(() -> new UsernameNotFoundException(username));
   }
 }

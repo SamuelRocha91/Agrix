@@ -5,8 +5,13 @@ package com.betrybe.agrix.ebytr.staff.exception;
  */
 public class PersonNotFoundException extends RuntimeException {
 
-  public PersonNotFoundException() {
-    super("Pessoa não encontrada!");
+  /**
+   * Instantiates a new Person not found exception.
+   *
+   * @param message the message
+   */
+  public PersonNotFoundException(String message) {
+    super(message);
   }
 
 }

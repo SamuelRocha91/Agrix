@@ -1,26 +1,29 @@
 package com.betrybe.agrix.ebytr.staff.dto;
 
-import com.betrybe.agrix.ebytr.staff.entity.Fertilizer;
+import com.betrybe.agrix.ebytr.staff.model.entity.Fertilizer;
 
 /**
- * cria o Fertilizer em dto para recebimento de dados do cliente.
- *
- * @param name string.
- * @param brand string.
- * @param composition string.
+ * The type Fertilizer dto.
  */
-public record FertilizerDto(String name, String brand, String composition) {
+public record FertilizerDto(
+    Long id,
+    String name,
+    String brand,
+    String composition
+) {
 
   /**
-   * cria um Fertilizer  a partir de dados do cliente.
+   * Entity from dto fertilizer dto.
    *
-   * @return Fertilizer.
+   * @param fertilizer the fertilizer
+   * @return the fertilizer dto
    */
-  public Fertilizer toEntity() {
-    Fertilizer fertilizer = new Fertilizer();
-    fertilizer.setName(name);
-    fertilizer.setBrand(brand);
-    fertilizer.setComposition(composition);
-    return fertilizer;
+  public static FertilizerDto entityFromDto(Fertilizer fertilizer) {
+    return new FertilizerDto(
+        fertilizer.getId(),
+        fertilizer.getName(),
+        fertilizer.getBrand(),
+        fertilizer.getComposition()
+    );
   }
 }

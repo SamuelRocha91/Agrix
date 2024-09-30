@@ -1,87 +1,87 @@
 package com.betrybe.agrix.ebytr.staff.service;
 
-import com.betrybe.agrix.ebytr.staff.entity.Crop;
-import com.betrybe.agrix.ebytr.staff.entity.Fertilizer;
+import com.betrybe.agrix.ebytr.staff.model.entity.Crop;
+import com.betrybe.agrix.ebytr.staff.model.entity.Fertilizer;
 import com.betrybe.agrix.ebytr.staff.exception.CropNotFoundException;
-import com.betrybe.agrix.ebytr.staff.exception.FertilizerNotFoundException;
-import com.betrybe.agrix.ebytr.staff.repository.CropRepository;
-import com.betrybe.agrix.ebytr.staff.repository.FertilizerRepository;
+import com.betrybe.agrix.ebytr.staff.exception.ErrorMessages;
+import com.betrybe.agrix.ebytr.staff.model.repository.CropRepository;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * service de crops.
- *
+ * The type Crop service.
  */
 @Service
 public class CropService {
 
   private final CropRepository cropRepository;
+  private final FertilizerService fertilizerService;
 
-  private final FertilizerRepository fertilizerRepository;
-
+  /**
+   * Instantiates a new Crop service.
+   *
+   * @param cropRepository    the crop repository
+   * @param fertilizerService the fertilizer service
+   */
   @Autowired
-  public CropService(CropRepository cropRepository, FertilizerRepository fertilizerRepository) {
-    this.fertilizerRepository = fertilizerRepository;
+  public CropService(CropRepository cropRepository, FertilizerService fertilizerService) {
     this.cropRepository = cropRepository;
+    this.fertilizerService = fertilizerService;
   }
 
-  public List<Crop> findAll() {
+  /**
+   * Gets all crops.
+   *
+   * @return the all crops
+   */
+  public List<Crop> getAllCrops() {
     return cropRepository.findAll();
   }
 
   /**
-   * recupera uma plantação por id ou lnaça erro por inexistencia.
+   * Gets crop by id.
    *
-   * @param id identificador da plantação.
-   * @return uma plantação específica.
+   * @param id the id
+   * @return the crop by id
    */
-  public Crop findById(Long id) {
-    Optional<Crop> crop = cropRepository.findById(id);
-    if (crop.isEmpty()) {
-      throw new CropNotFoundException();
-    }
-    return crop.get();
-  }
-
-  public List<Crop> findByDate(LocalDate start, LocalDate end) {
-    return cropRepository.findByDate(start, end);
+  public Crop getCropById(Long id) {
+    return cropRepository.findById(id)
+        .orElseThrow(() -> new CropNotFoundException(ErrorMessages.CROP_NOT_FOUND));
   }
 
   /**
-   * Associa uma plantação a um fertilizante.
+   * Gets crop by date.
    *
-   * @param cropId Long.
-   * @param fertilizerId Long.
+   * @param start the start
+   * @param end   the end
+   * @return the crop by date
    */
-
-  public void associateCropAndFertilizer(Long cropId, Long fertilizerId) {
-    Optional<Crop> crop = cropRepository.findById(cropId);
-    if (crop.isEmpty()) {
-      throw new CropNotFoundException();
-    }
-    Optional<Fertilizer> fertilizer = fertilizerRepository.findById(fertilizerId);
-    if (fertilizer.isEmpty()) {
-      throw new FertilizerNotFoundException();
-    }
-    Crop cropOne = crop.get();
-    Fertilizer fertilizerOne = fertilizer.get();
-
-    cropOne.setFertilizers(fertilizerOne);
-    cropRepository.save(cropOne);
+  public List<Crop> getCropByDate(LocalDate start, LocalDate end) {
+    return cropRepository.findByharvestDateBetween(start, end);
   }
 
   /**
-   * Busca a plantação pelo id e retorn os fertilizantes.
+   * Link crop to fertilizers.
    *
-   * @param cropId Long.
-   * @return Lista de fertilizers.
+   * @param cropId       the crop id
+   * @param fertilizerId the fertilizer id
    */
-  public List<Fertilizer> findFertilizersByCrop(Long cropId) {
-    Crop crop = this.findById(cropId);
-    return crop.getFertilizers();
+  public void linkCropToFertilizers(Long cropId, Long fertilizerId) {
+    Crop crop = getCropById(cropId);
+    Fertilizer fertilizer = fertilizerService.findById(fertilizerId);
+    crop.getFertilizers().add(fertilizer);
+    cropRepository.save(crop);
+  }
+
+  /**
+   * Gets fertilizer by crop.
+   *
+   * @param cropId the crop id
+   * @return the fertilizer by crop
+   */
+  public List<Fertilizer> getFertilizerByCrop(Long cropId) {
+    return getCropById(cropId).getFertilizers();
   }
 }
