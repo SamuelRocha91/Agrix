@@ -1,6 +1,7 @@
 package com.betrybe.agrix.ebytr.staff.service;
 
-import com.betrybe.agrix.ebytr.staff.entity.Person;
+import com.betrybe.agrix.ebytr.staff.model.entity.Person;
+import com.betrybe.agrix.ebytr.staff.exception.ErrorMessages;
 import com.betrybe.agrix.ebytr.staff.exception.PersonNotFoundException;
 import com.betrybe.agrix.ebytr.staff.model.repository.PersonRepository;
 import java.util.Optional;
@@ -32,7 +33,7 @@ public class PersonService implements UserDetailsService {
     Optional<Person> person = personRepository.findById(id);
 
     if (person.isEmpty()) {
-      throw new PersonNotFoundException();
+      throw new PersonNotFoundException(ErrorMessages.PERSON_NOT_FOUND);
     }
 
     return person.get();
@@ -45,7 +46,7 @@ public class PersonService implements UserDetailsService {
     Optional<Person> person = personRepository.findByUsername(username);
 
     if (person.isEmpty()) {
-      throw new PersonNotFoundException();
+      throw new PersonNotFoundException(ErrorMessages.PERSON_NOT_FOUND);
     }
 
     return person.get();

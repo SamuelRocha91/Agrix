@@ -1,6 +1,6 @@
 package com.betrybe.agrix.ebytr.staff.dto;
 
-import com.betrybe.agrix.ebytr.staff.entity.Fertilizer;
+import com.betrybe.agrix.ebytr.staff.model.entity.Fertilizer;
 
 /**
  * The type Fertilizer creation dto.

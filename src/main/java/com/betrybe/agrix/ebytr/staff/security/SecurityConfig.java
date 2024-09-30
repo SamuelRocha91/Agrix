@@ -16,6 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ * The type Security config.
+ */
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true)
@@ -23,10 +26,23 @@ public class SecurityConfig {
 
   private JwtFilter jwtFilter;
 
+  /**
+   * Instantiates a new Security config.
+   *
+   * @param jwtFilter the jwt filter
+   */
   @Autowired
   public SecurityConfig(JwtFilter jwtFilter) {
     this.jwtFilter = jwtFilter;
   }
+
+  /**
+   * Security filter chain security filter chain.
+   *
+   * @param httpSecurity the http security
+   * @return the security filter chain
+   * @throws Exception the exception
+   */
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
     return httpSecurity
@@ -42,6 +58,13 @@ public class SecurityConfig {
         .build();
   }
 
+  /**
+   * Authentication manager authentication manager.
+   *
+   * @param authenticationConfiguration the authentication configuration
+   * @return the authentication manager
+   * @throws Exception the exception
+   */
   @Bean
   public AuthenticationManager authenticationManager (
       AuthenticationConfiguration authenticationConfiguration
@@ -49,6 +72,11 @@ public class SecurityConfig {
     return  authenticationConfiguration.getAuthenticationManager();
   }
 
+  /**
+   * Password encoder password encoder.
+   *
+   * @return the password encoder
+   */
   @Bean
   public PasswordEncoder passwordEncoder() {
     return new BCryptPasswordEncoder();

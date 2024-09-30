@@ -1,6 +1,6 @@
 package com.betrybe.agrix.ebytr.staff.dto;
 
-import com.betrybe.agrix.ebytr.staff.entity.Person;
+import com.betrybe.agrix.ebytr.staff.model.entity.Person;
 
 /**
  * The type Person dto.

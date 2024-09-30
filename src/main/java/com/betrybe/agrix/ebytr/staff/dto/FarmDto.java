@@ -1,6 +1,6 @@
 package com.betrybe.agrix.ebytr.staff.dto;
 
-import com.betrybe.agrix.ebytr.staff.entity.Farm;
+import com.betrybe.agrix.ebytr.staff.model.entity.Farm;
 
 /**
  * The type Farm dto.

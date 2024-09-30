@@ -2,7 +2,7 @@ package com.betrybe.agrix.ebytr.staff.controller;
 
 import com.betrybe.agrix.ebytr.staff.dto.FertilizerCreationDto;
 import com.betrybe.agrix.ebytr.staff.dto.FertilizerDto;
-import com.betrybe.agrix.ebytr.staff.entity.Person;
+import com.betrybe.agrix.ebytr.staff.model.entity.Person;
 import com.betrybe.agrix.ebytr.staff.service.FertilizerService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

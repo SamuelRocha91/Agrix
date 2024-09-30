@@ -4,17 +4,14 @@ import com.betrybe.agrix.ebytr.staff.dto.CropCreationDto;
 import com.betrybe.agrix.ebytr.staff.dto.CropDtoResponse;
 import com.betrybe.agrix.ebytr.staff.dto.FarmCreationDto;
 import com.betrybe.agrix.ebytr.staff.dto.FarmDto;
-import com.betrybe.agrix.ebytr.staff.entity.Crop;
-import com.betrybe.agrix.ebytr.staff.entity.Farm;
-import com.betrybe.agrix.ebytr.staff.entity.Person;
+import com.betrybe.agrix.ebytr.staff.model.entity.Crop;
+import com.betrybe.agrix.ebytr.staff.model.entity.Farm;
 import com.betrybe.agrix.ebytr.staff.service.FarmService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -60,7 +57,7 @@ public class FarmController {
    */
   @GetMapping("/{id}")
   public ResponseEntity<FarmDto> getFarmById(@PathVariable Long id) {
-    Farm farm =  farmService.getFarm(id);
+    Farm farm = farmService.getFarm(id);
     return ResponseEntity.status(HttpStatus.OK)
         .body(FarmDto.entityFromDto(farm));
   }

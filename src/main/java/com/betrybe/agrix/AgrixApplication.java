@@ -11,8 +11,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * Application main class.
  */
 @SpringBootApplication
-@EntityScan("com.betrybe.agrix.ebytr.staff.entity")
-@EnableJpaRepositories("com.betrybe.agrix.ebytr.staff.model.entity.repository")
+@EntityScan("com.betrybe.agrix.ebytr.staff.model.entity")
+@EnableJpaRepositories("com.betrybe.agrix.ebytr.staff.model.repository")
 @ComponentScan("com.betrybe.agrix")
 @EnableJpaAuditing
 public class AgrixApplication {
