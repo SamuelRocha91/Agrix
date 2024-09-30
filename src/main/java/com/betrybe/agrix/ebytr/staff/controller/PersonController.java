@@ -1,10 +1,7 @@
 package com.betrybe.agrix.ebytr.staff.controller;
 
-// src/main/java/com/betrybe/trybetrack/controllers/AuthenticationController.java
-
-import com.betrybe.agrix.ebytr.staff.dto.AuthenticationDto;
+import com.betrybe.agrix.ebytr.staff.dto.PersonCreationDto;
 import com.betrybe.agrix.ebytr.staff.dto.PersonDto;
-import com.betrybe.agrix.ebytr.staff.dto.PersonDtoResponse;
 import com.betrybe.agrix.ebytr.staff.entity.Person;
 import com.betrybe.agrix.ebytr.staff.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,33 +13,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Implementa controller de autorização e autenticação.
- *
+ * The type Person controller.
  */
 @RestController
 @RequestMapping("/persons")
 public class PersonController {
 
-
   private final PersonService personService;
 
+  /**
+   * Instantiates a new Person controller.
+   *
+   * @param service the service
+   */
   @Autowired
-  public PersonController(PersonService personService) {
-    this.personService = personService;
+  public PersonController(PersonService service) {
+    this.personService = service;
   }
 
   /**
-   * cria rota de cadastro de usuário.
+   * Post person response entity.
    *
-   * @param personDto com username, password e role.
-   * @return id, username e role.
+   * @param personDto the person dto
+   * @return the response entity
    */
-  @PostMapping()
-  public ResponseEntity<PersonDtoResponse> register(@RequestBody PersonDto personDto) {
-    Person person = personService.create(personDto.toEntity());
-    return ResponseEntity.status(HttpStatus.CREATED).body(new PersonDtoResponse(person.getId(),
-        person.getUsername(), person.getRole()));
+  @PostMapping
+  public ResponseEntity<PersonDto> postPerson(@RequestBody PersonCreationDto personDto) {
+    Person person = personService.create(personDto.fromEntity());
+    return ResponseEntity.status(HttpStatus.CREATED).body(PersonDto.entityFromDto(person));
   }
-
-
 }

@@ -1,4 +1,4 @@
-package com.betrybe.agrix.ebytr.staff.controlller;
+package com.betrybe.agrix.ebytr.staff.controller;
 
 import com.betrybe.agrix.ebytr.staff.dto.AuthDto;
 import com.betrybe.agrix.ebytr.staff.dto.TokenDto;
@@ -29,7 +29,9 @@ public class AuthController {
    * @param tokenService          the token service
    */
   @Autowired
-  public AuthController(AuthenticationManager authenticationManager, TokenService tokenService) {
+  public AuthController(
+      AuthenticationManager authenticationManager,
+      TokenService tokenService) {
     this.authenticationManager = authenticationManager;
     this.tokenService = tokenService;
   }
