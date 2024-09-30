@@ -5,5 +5,4 @@ package com.betrybe.agrix.ebytr.staff.exception;
  *
  */
 public class FertilizerNotFoundException extends RuntimeException {
-
 }
