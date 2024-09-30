@@ -18,61 +18,18 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class GeneralControllerAdvice {
 
   /**
-   * Método que trata o lançamento de uma exceção de fazenda não encontrada pelo id.
+   * Handle farm not found response entity.
    *
-   * @param farmNotFoundException excecao lançada no farmSercide.
-   * @return 404 e uma mensagem.
+   * @param exception the exception
+   * @return the response entity
    */
-  @ExceptionHandler(FarmNotFoundException.class)
-  public ResponseEntity<String> handleFarmNotFoundException(FarmNotFoundException
-      farmNotFoundException) {
-    Exception exception1 = new Exception("Fazenda não encontrada!");
-    return ResponseEntity
-        .status(HttpStatus.NOT_FOUND)
-        .body(exception1.getMessage());
-  }
-
-  /**
-   * trata a exceção por crop not found.
-   *
-   * @param cropNotFoundException a exceção lançada na service de crop.
-   * @return um status  com uma mensagem.
-   */
-  @ExceptionHandler(CropNotFoundException.class)
-  public ResponseEntity<String> handleCropNotFoundException(CropNotFoundException
-      cropNotFoundException) {
-    Exception exception1 = new Exception("Plantação não encontrada!");
-    return ResponseEntity
-        .status(HttpStatus.NOT_FOUND)
-        .body(exception1.getMessage());
-  }
-
-  /**
-   * cria uma escuta para resposta ao usuário por fertilizante
-   * inxistente no banco de dados.
-   *
-   * @return uma resposta ao cliente.
-   **/
-  @ExceptionHandler(FertilizerNotFoundException.class)
-  public ResponseEntity<String> handleRunTimeException(FertilizerNotFoundException e) {
-    Exception exception1 = new Exception("Fertilizante não encontrado!");
-    return ResponseEntity
-        .status(HttpStatus.NOT_FOUND)
-        .body(exception1.getMessage());
-  }
-
-  /**
-   * cria escuta de exceção por person not found.
-   *
-   * @param personNotFoundException runtime.
-   * @return httpresponse.
-   */
-  @ExceptionHandler(PersonNotFoundException.class)
-  public ResponseEntity<String> handlePersonNotFoundException(PersonNotFoundException
-      personNotFoundException) {
-    Exception exception1 = new Exception("Pessoa não encontrada!");
-    return ResponseEntity
-        .status(HttpStatus.NOT_FOUND)
-        .body(exception1.getMessage());
+  @ExceptionHandler({
+      FarmNotFoundException.class,
+      CropNotFoundException.class,
+      FertilizerNotFoundException.class,
+      PersonNotFoundException.class
+  })
+  public ResponseEntity<String> handleFarmNotFound(Exception exception) {
+    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
   }
 }

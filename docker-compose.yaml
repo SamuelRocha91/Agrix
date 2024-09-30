@@ -1,0 +1,38 @@
+# Use root/example as user/password credentials
+version: '3.1'
+
+services:
+
+  db:
+    image: mysql:8.0.32
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: agrixDb
+    ports:
+      - "3306:3306"
+    networks:
+      - mynetwork
+    volumes:
+      - sharedvolume:/var/lib/mysql
+
+  app:
+    build: .
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/agrixDb
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "8080:8080"
+    networks:
+      - mynetwork
+    depends_on:
+      - db
+networks:
+  mynetwork:
+    driver: bridge
+
+
+volumes:
+  sharedvolume:
+    driver: local
