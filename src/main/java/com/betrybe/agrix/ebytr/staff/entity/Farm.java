@@ -9,71 +9,106 @@ import jakarta.persistence.Table;
 import java.util.List;
 
 /**
- * Cria a entidade farm.
- *
+ * The type Farm.
  */
 @Entity
 @Table(name = "farm")
 public class Farm {
-
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String name;
-
-  private Double size;
-
-
   @OneToMany(mappedBy = "farm")
   private List<Crop> crops;
 
+  private String name;
+  private Double size;
+
+  /**
+   * Instantiates a new Farm.
+   */
   public Farm() {
   }
 
   /**
-   * inicializa os atributos da classe.
+   * Instantiates a new Farm.
    *
-   * @param id LOng.
-   * @param name string com o nome da fazenda.
-   * @param size um double com o tamanho da fazenda.
-   * @param crops uma lista com plantacoes.
+   * @param name the name
+   * @param size the size
    */
-  public Farm(Long id, String name, Double size, List<Crop> crops) {
-    this.id = id;
-    this.name = name;
+  public Farm(String name, Double size) {
     this.size = size;
-    this.crops = crops;
+    this.name = name;
   }
 
+  /**
+   * Gets id.
+   *
+   * @return the id
+   */
   public Long getId() {
     return id;
   }
 
+  /**
+   * Sets id.
+   *
+   * @param id the id
+   */
   public void setId(Long id) {
     this.id = id;
   }
 
+  /**
+   * Gets name.
+   *
+   * @return the name
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * Sets name.
+   *
+   * @param name the name
+   */
   public void setName(String name) {
     this.name = name;
   }
 
+  /**
+   * Gets size.
+   *
+   * @return the size
+   */
   public Double getSize() {
     return size;
   }
 
+  /**
+   * Sets size.
+   *
+   * @param size the size
+   */
   public void setSize(Double size) {
     this.size = size;
   }
 
+  /**
+   * Gets crops.
+   *
+   * @return the crops
+   */
   public List<Crop> getCrops() {
     return crops;
   }
 
+  /**
+   * Sets crops.
+   *
+   * @param crops the crops
+   */
   public void setCrops(List<Crop> crops) {
     this.crops = crops;
   }
