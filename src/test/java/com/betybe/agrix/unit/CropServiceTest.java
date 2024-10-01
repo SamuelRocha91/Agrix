@@ -7,8 +7,8 @@ import static org.mockito.ArgumentMatchers.eq;
 
 import com.betrybe.agrix.AgrixApplication;
 import com.betrybe.agrix.ebytr.staff.exception.CropNotFoundException;
-import com.betrybe.agrix.ebytr.staff.exception.PersonNotFoundException;
 import com.betrybe.agrix.ebytr.staff.model.entity.Crop;
+import com.betrybe.agrix.ebytr.staff.model.entity.Fertilizer;
 import com.betrybe.agrix.ebytr.staff.model.repository.CropRepository;
 import com.betrybe.agrix.ebytr.staff.service.CropService;
 import java.time.LocalDate;
@@ -110,5 +110,24 @@ public class CropServiceTest {
 
     assertEquals(1, crop1.size());
     assertEquals(crop.getPlantedArea(), crop1.get(0).getPlantedArea());
+  }
+
+  @Test
+  public void testgetFertilizersByCrop() {
+    Crop cropToReturn = createDefaultCropWithId(123L);
+    Fertilizer fertilizer = new Fertilizer();
+    fertilizer.setName("Humus");
+    fertilizer.setComposition("terra");
+    fertilizer.setBrand("ajk");
+    cropToReturn.setFertilizers(List.of(fertilizer));
+
+    Mockito.when(cropRepository.findById(any())).thenReturn(Optional.of(cropToReturn));
+
+    List<Fertilizer> fertilizer1 = cropService.getFertilizerByCrop(123L);
+
+    Mockito.verify(cropRepository).findById(eq(123L));
+
+    assertEquals(1, fertilizer1.size());
+    assertEquals("Humus", fertilizer1.get(0).getName());
   }
 }
