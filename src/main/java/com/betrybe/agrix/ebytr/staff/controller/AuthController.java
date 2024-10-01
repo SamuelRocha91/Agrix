@@ -3,6 +3,7 @@ package com.betrybe.agrix.ebytr.staff.controller;
 import com.betrybe.agrix.ebytr.staff.dto.AuthDto;
 import com.betrybe.agrix.ebytr.staff.dto.TokenDto;
 import com.betrybe.agrix.ebytr.staff.service.TokenService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -43,7 +44,7 @@ public class AuthController {
    * @return the token dto
    */
   @PostMapping("/login")
-  public TokenDto login(@RequestBody AuthDto authDto) {
+  public TokenDto login(@Valid @RequestBody AuthDto authDto) {
     UsernamePasswordAuthenticationToken userPassword =
         new UsernamePasswordAuthenticationToken(
             authDto.username(), authDto.password()
