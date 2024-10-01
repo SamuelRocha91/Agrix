@@ -16,8 +16,8 @@ A aplicação tem como objetivo gerenciar e monitorar as fazendas participantes 
 
 ## 🛤️ Rotas
 
-![Diagrama do banco de dados](./images/routOne)
-![Diagrama do banco de dados](./images/routTwo)
+![Diagrama do banco de dados](./images/routeOne.png)
+![Diagrama do banco de dados](./images/routesTwo.png)
 
 
 ## 🛠️ Funcionalidades Implementadas
