@@ -1,11 +1,8 @@
 package com.betybe.agrix.integration;
 
 import com.betrybe.agrix.AgrixApplication;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.betrybe.agrix.ebytr.staff.model.entity.Person;
 import com.betrybe.agrix.ebytr.staff.model.repository.PersonRepository;
-import com.betrybe.agrix.ebytr.staff.security.Role;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
