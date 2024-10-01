@@ -4,6 +4,7 @@ import com.betrybe.agrix.ebytr.staff.dto.PersonCreationDto;
 import com.betrybe.agrix.ebytr.staff.dto.PersonDto;
 import com.betrybe.agrix.ebytr.staff.model.entity.Person;
 import com.betrybe.agrix.ebytr.staff.service.PersonService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,7 +39,7 @@ public class PersonController {
    * @return the response entity
    */
   @PostMapping
-  public ResponseEntity<PersonDto> postPerson(@RequestBody PersonCreationDto personDto) {
+  public ResponseEntity<PersonDto> postPerson(@Valid @RequestBody PersonCreationDto personDto) {
     Person person = personService.create(personDto.fromEntity());
     return ResponseEntity.status(HttpStatus.CREATED).body(PersonDto.entityFromDto(person));
   }

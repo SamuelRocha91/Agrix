@@ -7,6 +7,7 @@ import com.betrybe.agrix.ebytr.staff.dto.FarmDto;
 import com.betrybe.agrix.ebytr.staff.model.entity.Crop;
 import com.betrybe.agrix.ebytr.staff.model.entity.Farm;
 import com.betrybe.agrix.ebytr.staff.service.FarmService;
+import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -84,7 +85,7 @@ public class FarmController {
    * @return the response entity
    */
   @PostMapping
-  public ResponseEntity<FarmDto> postFarm(@RequestBody FarmCreationDto farm) {
+  public ResponseEntity<FarmDto> postFarm(@Valid @RequestBody FarmCreationDto farm) {
     FarmDto farmSaved = farmService.saveFarm(farm.fromEntity());
     return ResponseEntity.status(HttpStatus.CREATED).body(farmSaved);
   }
@@ -99,7 +100,7 @@ public class FarmController {
   @PostMapping("/{farmId}/crops")
   public ResponseEntity<CropDtoResponse> postCrop(
       @PathVariable Long farmId,
-      @RequestBody CropCreationDto crop
+      @Valid @RequestBody CropCreationDto crop
   ) {
     Crop cropSaved = farmService.createFarmCrop(farmId, crop.fromEntity());
     return ResponseEntity.status(HttpStatus.CREATED)

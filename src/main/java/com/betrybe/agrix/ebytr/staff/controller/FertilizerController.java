@@ -4,6 +4,7 @@ import com.betrybe.agrix.ebytr.staff.dto.FertilizerCreationDto;
 import com.betrybe.agrix.ebytr.staff.dto.FertilizerDto;
 import com.betrybe.agrix.ebytr.staff.model.entity.Person;
 import com.betrybe.agrix.ebytr.staff.service.FertilizerService;
+import jakarta.validation.Valid;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -67,7 +68,7 @@ public class FertilizerController {
    */
   @PostMapping
   public ResponseEntity<FertilizerDto> postFertilizer(
-      @RequestBody FertilizerCreationDto fertilizer
+      @Valid @RequestBody FertilizerCreationDto fertilizer
   ) {
     FertilizerDto fertilizerSaved = fertilizerService.create(fertilizer.fromEntity());
     return ResponseEntity.status(HttpStatus.CREATED).body(fertilizerSaved);
