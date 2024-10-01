@@ -1,7 +1,5 @@
 # <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 🌱 Agrix - 农场管理与监控 <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 
 
-![状态: 开发中](https://img.shields.io/badge/status-in%20development-yellow)
-
 ## 🌐 [![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) [![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) [![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) [![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) [![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/Agrix/Agrix/blob/main/README_ch.md)) [![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
 
 
@@ -10,6 +8,15 @@
 Agrix 项目是 Trybe 的 Web 开发课程中的一个评估项目。该项目涉及使用 Java、Maven、Docker、MySQL 和几乎整个 Spring 生态系统。应用程序的构建完全自由，包括从代码处理到配置的各个方面。
 
 该应用程序的目标是管理和监控参与的农场，帮助他们提高技术水平，并负责任地使用土地。系统包括用于身份验证、授权、农场注册、种植、肥料管理等的路由。
+
+## 📈 数据库图
+
+![数据库图](./images/diagrama.png)
+
+## 🛤️ 路由
+
+![路由图](./images/routeOne.png)  
+![路由图](./images/routesTwo.png)
 
 ## 🛠️ 实现的功能
 
@@ -126,13 +133,6 @@ mvn test
 - [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/): MySQL 的 JDBC 连接器。
 - [JUnit](https://junit.org/junit5/): 单元测试框架。
 
-## 🚀 未来改进
-
-该项目正在开发中，计划实施以下改进：
-
-- **层次重构**：改进控制层、服务层和持久层之间的分离。
-- **Docker 改进**：调整 Docker 配置以优化构建和运行应用程序。
-- **自动化测试**：扩展自动化测试覆盖面，以确保应用程序的可靠性。
 
 ## 其他项目
 

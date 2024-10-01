@@ -1,7 +1,5 @@
 # <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 🌱 Agrix - إدارة ومراقبة المزارع <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" />
 
-![الحالة: قيد التطوير](https://img.shields.io/badge/status-in%20development-yellow)
-
 ## 🌐 [![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) [![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) [![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) [![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) [![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/kotlinVirtualMenu) [![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
 
 ## 📜 مقدمة
@@ -9,6 +7,15 @@
 مشروع Agrix هو مشروع تقييم تم تطويره في وحدة Java من دورة تطوير الويب في Trybe. استخدم المشروع Java و Maven و Docker و MySQL وأغلب نظام Spring البيئي. تم بناء التطبيق بحرية كاملة من حيث التنفيذ، بدءاً من معالجة الشيفرة وحتى الإعداد.
 
 الهدف من التطبيق هو إدارة ومراقبة المزارع المشاركة التي تسعى لتحسين تقنياتها واستخدام الأراضي بشكل مسؤول. يشمل النظام مسارات للتوثيق والتفويض وتسجيل المزارع والمحاصيل والأسمدة والمزيد.
+
+## 📈 مخطط قاعدة البيانات
+
+![مخطط قاعدة البيانات](./images/diagrama.png)
+
+## 🛤️ المسارات
+
+![مخطط المسارات](./images/routeOne.png)  
+![مخطط المسارات](./images/routesTwo.png)
 
 ## 🛠️ الميزات المنفذة
 
@@ -124,14 +131,6 @@ mvn test
 - [Java JWT](https://github.com/auth0/java-jwt): مكتبة لمعالجة JWT.
 - [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/): موصل JDBC لـ MySQL.
 - [JUnit](https://junit.org/junit5/): إطار عمل للاختبارات الوحدوية.
-
-## 🚀 التحسينات المستقبلية
-
-المشروع قيد التطوير، ومن المخطط تنفيذ التحسينات التالية:
-
-- **إعادة هيكلة الطبقات**: تحسين الفصل بين طبقات التحكم والخدمات والاحتفاظ.
-- **تحسين Docker**: تعديل تكوين Docker لتحسين بناء وتشغيل التطبيق.
-- **الاختبارات التلقائية**: توسيع نطاق تغطية الاختبارات التلقائية لضمان قوة التطبيق
 
 
 ## مشاريع أخرى
