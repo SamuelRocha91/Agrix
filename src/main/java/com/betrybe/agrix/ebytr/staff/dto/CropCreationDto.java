@@ -1,11 +1,12 @@
 package com.betrybe.agrix.ebytr.staff.dto;
 
 import com.betrybe.agrix.ebytr.staff.model.entity.Crop;
-import java.time.LocalDate;
 import jakarta.validation.constraints.NotBlank;
+import java.time.LocalDate;
 /**
  * The type Crop creation dto.
  */
+
 public record CropCreationDto(
     @NotBlank(message = "Name is Required")
     String name,

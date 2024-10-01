@@ -44,7 +44,9 @@ public class FertilizerController {
    */
   @Secured("ROLE_ADMIN")
   @GetMapping
-  public ResponseEntity<List<FertilizerDto>> getAllFertilizers(@AuthenticationPrincipal Person person) {
+  public ResponseEntity<List<FertilizerDto>> getAllFertilizers(
+      @AuthenticationPrincipal Person person
+  ) {
     return ResponseEntity.status(HttpStatus.OK).body(fertilizerService.findAll());
   }
 
