@@ -11,6 +11,15 @@ The Agrix project is an evaluative project developed in the Java module of the T
 
 The application aims to manage and monitor participating farms that seek to improve their technologies and use the land responsibly. The system includes routes for authentication, authorization, farm registration, crop management, fertilizers, and more.
 
+## 📈 Database Diagram
+
+![Database Diagram](./images/diagrama.png)
+
+## 🛤️ Routes
+
+![Routes Diagram](./images/routeOne.png)
+![Routes Diagram](./images/routesTwo.png)
+
 ## 🛠️ Implemented Features
 
 - **Authentication and Authorization**: Security implementation using Spring Security to manage access to the application's routes.
@@ -74,16 +83,10 @@ mvn test
 
 To build and run the application using Docker, follow the instructions below:
 
-1. Build the Docker image:
+1. Build the Docker container:
 
    ```bash
-   docker build -t agrix .
-   ```
-
-2. Run the Docker container:
-
-   ```bash
-   docker run -p 8080:8080 agrix
+   docker-compose up
    ```
 
 ## 🗂️ File Structure

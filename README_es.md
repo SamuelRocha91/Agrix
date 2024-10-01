@@ -11,6 +11,17 @@ El proyecto Agrix es un proyecto evaluativo desarrollado en el módulo de Java d
 
 La aplicación tiene como objetivo gestionar y monitorear las granjas participantes que buscan perfeccionar sus tecnologías y utilizar la tierra de manera responsable. El sistema incluye rutas para autenticación, autorización, registro de granjas, cultivos, fertilizantes y mucho más.
 
+
+## 📈 Diagrama de la Base de Datos
+
+![Diagrama de la base de datos](./images/diagrama.png)
+
+## 🛤️ Rutas
+
+![Diagrama de las rutas](./images/routeOne.png)  
+![Diagrama de las rutas](./images/routesTwo.png)
+
+
 ## 🛠️ Funcionalidades Implementadas
 
 - **Autenticación y Autorización**: Implementación de seguridad usando Spring Security para gestionar el acceso a las rutas de la aplicación.
@@ -74,17 +85,12 @@ mvn test
 
 Para construir y ejecutar la aplicación usando Docker, sigue las instrucciones a continuación:
 
-1. Construye la imagen Docker:
+1. Construye Docker:
 
    ```bash
-   docker build -t agrix .
+   docker compose up
    ```
 
-2. Ejecuta el contenedor Docker:
-
-   ```bash
-   docker run -p 8080:8080 agrix
-   ```
 
 ## 🗂️ Estructura de Archivos
 
