@@ -12,12 +12,12 @@ A aplicação tem como objetivo gerenciar e monitorar as fazendas participantes 
 
 ## 📈 Diagrama Banco de dados
 
-![Diagrama do banco de dados]("./images/diagrama.png")
+![Diagrama do banco de dados](./images/diagrama.png)
 
 ## 🛤️ Rotas
 
-![Diagrama do banco de dados]("./images/routOne")
-![Diagrama do banco de dados]("./images/routTwo")
+![Diagrama do banco de dados](./images/routOne)
+![Diagrama do banco de dados](./images/routTwo)
 
 
 ## 🛠️ Funcionalidades Implementadas
