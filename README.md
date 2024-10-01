@@ -83,16 +83,10 @@ mvn test
 
 Para construir e executar a aplicação usando Docker, siga as instruções abaixo:
 
-1. Construa a imagem Docker:
+1. Construa o container Docker:
 
    ```bash
-   docker build -t agrix .
-   ```
-
-2. Execute o container Docker:
-
-   ```bash
-   docker run -p 8080:8080 agrix
+   docker compose up
    ```
 
 ## 🗂️ Estrutura de Arquivos
