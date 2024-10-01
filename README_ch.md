@@ -1,7 +1,5 @@
 # <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 🌱 Agrix - 农场管理与监控 <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 
 
-![状态: 开发中](https://img.shields.io/badge/status-in%20development-yellow)
-
 ## 🌐 [![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) [![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) [![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) [![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) [![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/Agrix/Agrix/blob/main/README_ch.md)) [![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
 
 
@@ -135,13 +133,6 @@ mvn test
 - [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/): MySQL 的 JDBC 连接器。
 - [JUnit](https://junit.org/junit5/): 单元测试框架。
 
-## 🚀 未来改进
-
-该项目正在开发中，计划实施以下改进：
-
-- **层次重构**：改进控制层、服务层和持久层之间的分离。
-- **Docker 改进**：调整 Docker 配置以优化构建和运行应用程序。
-- **自动化测试**：扩展自动化测试覆盖面，以确保应用程序的可靠性。
 
 ## 其他项目
 

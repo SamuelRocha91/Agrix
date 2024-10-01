@@ -1,7 +1,5 @@
 # <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 🌱 Agrix - Gestão e Monitoramento de Fazendas <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> # 
 
-![Status: Em Desenvolvimento](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
-
 ## 🌐 [![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) [![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) [![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) [![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) [![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/kotlinVirtualMenu) [![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
 
 ## 📜 Introdução
@@ -128,14 +126,6 @@ As principais dependências do projeto são:
 - [Java JWT](https://github.com/auth0/java-jwt): Biblioteca para manipulação de JWT.
 - [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/): Conector JDBC para MySQL.
 - [JUnit](https://junit.org/junit5/): Framework para testes unitários.
-
-## 🚀 Melhorias Futuras
-
-O projeto está em desenvolvimento e planeja-se implementar as seguintes melhorias:
-
-- **Refatoração de Camadas**: Melhorar a separação entre as camadas de controle, serviço e persistência.
-- **Aprimoramento do Docker**: Ajustar a configuração do Docker para otimizar a construção e execução da aplicação.
-- **Testes Automatizados**: Expandir a cobertura dos testes automatizados para garantir maior robustez da aplicação.
 
 ## Outros projetos:
 

@@ -1,7 +1,5 @@
 # <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 🌱 Agrix - Управление и Мониторинг Ферм <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" />
 
-![Статус: В Разработке](https://img.shields.io/badge/status-in%20development-yellow)
-
 ## 🌐 [![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) [![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) [![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) [![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) [![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/Agrix/Agrix/blob/main/README_ch.md) [![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
 
 ## 📜 Введение
@@ -133,14 +131,6 @@ mvn test
 - [Java JWT](https://github.com/auth0/java-jwt): Библиотека для манипуляции JWT.
 - [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/): JDBC коннектор для MySQL.
 - [JUnit](https://junit.org/junit5/): Фреймворк для модульного тестирования.
-
-## 🚀 Будущие Улучшения
-
-Проект находится в стадии разработки, и планируется внедрение следующих улучшений:
-
-- **Рефакторинг Слоёв**: Улучшение разделения между слоями контроля, сервиса и хранения.
-- **Улучшения Docker**: Настройка конфигурации Docker для оптимизации сборки и выполнения приложения.
-- **Автоматизированное Тестирование**: Расширение покрытия автоматизированных тестов для обеспечения большей надёжности приложения.
 
 ## Другие проекты
 
