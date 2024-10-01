@@ -1,14 +1,19 @@
 package com.betybe.agrix.unit;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 
 import com.betrybe.agrix.AgrixApplication;
+import com.betrybe.agrix.ebytr.staff.exception.CropNotFoundException;
+import com.betrybe.agrix.ebytr.staff.exception.PersonNotFoundException;
 import com.betrybe.agrix.ebytr.staff.model.entity.Crop;
 import com.betrybe.agrix.ebytr.staff.model.repository.CropRepository;
 import com.betrybe.agrix.ebytr.staff.service.CropService;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,4 +62,53 @@ public class CropServiceTest {
     assertEquals(123L, crop1.get(0).getId());
   }
 
+  @Test
+  public void testGetCropById() {
+    Crop crop = createDefaultCrop();
+
+    Crop cropToReturn = createDefaultCropWithId(123L);
+
+    Mockito.when(cropRepository.findById(eq(123L)))
+        .thenReturn(Optional.of(cropToReturn));
+
+    Crop crop1 = cropService.getCropById(123L);
+
+    Mockito.verify(cropRepository).findById(eq(123L));
+
+    assertEquals(123L, crop1.getId());
+    assertEquals(crop.getPlantedArea(), crop1.getPlantedArea());
+  }
+
+  @Test
+  public void testThrowGetCropById() {
+    Mockito.when(cropRepository.findById(any()))
+        .thenReturn(Optional.empty());
+
+    assertThrows(CropNotFoundException.class, () -> cropService.getCropById(123L));
+
+    Mockito.verify(cropRepository).findById(eq(123L));
+  }
+
+  @Test
+  public void testGetCropByDate() {
+    Crop crop = createDefaultCrop();
+
+    List<Crop> cropToReturn = List.of(createDefaultCropWithId(123L));
+
+    Mockito.when(cropRepository
+            .findByharvestDateBetween(eq(LocalDate.parse("2023-01-04")),
+                eq(LocalDate.parse("2023-05-12"))))
+        .thenReturn(cropToReturn);
+
+    List<Crop> crop1 = cropService
+        .getCropByDate(LocalDate.parse("2023-01-04"),
+    LocalDate.parse("2023-05-12"));
+
+    Mockito.verify(cropRepository)
+        .findByharvestDateBetween(eq(LocalDate.parse("2023-01-04")),
+        eq(LocalDate.parse("2023-05-12")));
+
+    assertEquals(1, crop1.size());
+    assertEquals(crop.getPlantedArea(), crop1.get(0).getPlantedArea());
+  }
 }
