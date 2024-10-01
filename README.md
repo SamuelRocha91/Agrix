@@ -10,6 +10,16 @@ O projeto Agrix é um projeto avaliativo desenvolvido no módulo de Java do curs
 
 A aplicação tem como objetivo gerenciar e monitorar as fazendas participantes que buscam aperfeiçoar suas tecnologias e usar o solo de forma responsável. O sistema inclui rotas para autenticação, autorização, cadastro de fazendas, plantações, fertilizantes e muito mais.
 
+## 📈 Diagrama Banco de dados
+
+![Diagrama do banco de dados]("./images/diagrama.png")
+
+## 🛤️ Rotas
+
+![Diagrama do banco de dados]("./images/routOne")
+![Diagrama do banco de dados]("./images/routTwo")
+
+
 ## 🛠️ Funcionalidades Implementadas
 
 - **Autenticação e Autorização**: Implementação de segurança usando Spring Security para gerenciar o acesso às rotas da aplicação.
