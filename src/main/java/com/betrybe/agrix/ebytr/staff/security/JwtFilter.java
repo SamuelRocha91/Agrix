@@ -40,23 +40,22 @@ public class JwtFilter extends OncePerRequestFilter {
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
       FilterChain filterChain) throws ServletException, IOException {
-      Optional<String> token = extractToken(request);
-      if (token.isPresent()) {
-        String subject = tokenService.validateToken(token.get());
-        UserDetails userDetails = personService.loadUserByUsername(subject);
-        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
-            userDetails, null, userDetails.getAuthorities()
-        );
-        SecurityContextHolder.getContext().setAuthentication(auth);
-      }
-
-      filterChain.doFilter(request, response);
+    Optional<String> token = extractToken(request);
+    if (token.isPresent()) {
+      String subject = tokenService.validateToken(token.get());
+      UserDetails userDetails = personService.loadUserByUsername(subject);
+      UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
+          userDetails, null, userDetails.getAuthorities()
+      );
+      SecurityContextHolder.getContext().setAuthentication(auth);
+    }
+    filterChain.doFilter(request, response);
   }
 
   private Optional<String> extractToken(HttpServletRequest request) {
     String authHeader = request.getHeader("Authorization");
 
-    if(authHeader == null) {
+    if (authHeader == null) {
       return Optional.empty();
     }
 

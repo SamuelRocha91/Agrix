@@ -1,9 +1,9 @@
 package com.betrybe.agrix.ebytr.staff.service;
 
 import com.betrybe.agrix.ebytr.staff.dto.FertilizerDto;
-import com.betrybe.agrix.ebytr.staff.model.entity.Fertilizer;
 import com.betrybe.agrix.ebytr.staff.exception.ErrorMessages;
 import com.betrybe.agrix.ebytr.staff.exception.FertilizerNotFoundException;
+import com.betrybe.agrix.ebytr.staff.model.entity.Fertilizer;
 import com.betrybe.agrix.ebytr.staff.model.repository.FertilizerRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

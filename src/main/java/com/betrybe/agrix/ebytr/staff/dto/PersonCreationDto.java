@@ -2,11 +2,21 @@ package com.betrybe.agrix.ebytr.staff.dto;
 
 import com.betrybe.agrix.ebytr.staff.model.entity.Person;
 import com.betrybe.agrix.ebytr.staff.security.Role;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 /**
  * The type Person creation dto.
  */
-public record PersonCreationDto(String username, String password, Role role) {
+public record PersonCreationDto(
+    @NotBlank(message = "username is Required")
+    String username,
+
+    @Size(min = 6, message = "Password must have at least 6 characters")
+    @NotBlank(message = "Password is Required")
+    String password,
+
+    Role role) {
 
   /**
    * From entity person.
