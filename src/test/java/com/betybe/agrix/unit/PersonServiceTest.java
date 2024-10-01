@@ -21,7 +21,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest(classes = AgrixApplication.class)
 @ActiveProfiles("test")
-public class ServiceTest {
+public class PersonServiceTest {
 
   @MockBean
   PersonRepository personRepository;

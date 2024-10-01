@@ -15,4 +15,6 @@ public record FarmCreationDto(String name, Double size) {
   public Farm fromEntity() {
     return new Farm(name, size);
   }
+
+
 }
