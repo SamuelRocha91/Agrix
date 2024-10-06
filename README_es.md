@@ -16,6 +16,7 @@ El proyecto **Agrix** es una aplicación web para la gestión y monitoreo de gra
 <summary><h2>📈 Diagrama de la Base de Datos</h2></summary>
 
 ![Diagrama de la Base de Datos](./images/diagrama.png)
+</details>
 
 <details>
   <summary><h2>Funciones Implementadas</h2></summary>
