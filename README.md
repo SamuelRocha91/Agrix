@@ -1,135 +1,76 @@
-# <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 🌱 Agrix - Gestão e Monitoramento de Fazendas <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> # 
+# <img src="https://cdn-icons-png.flaticon.com/128/226/226777.png" alt="Java Projects Logo" width="42" height="30" /> 🌱 Agrix - Gestão e Monitoramento de Fazendas  <img src="https://cdn-icons-png.flaticon.com/128/226/226777.png" alt="Java Projects Logo" width="42" height="30" />
 
-## 🌐 [![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) [![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) [![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) [![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) [![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/kotlinVirtualMenu) [![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
+## 🌐 
+[![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) 
+[![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) 
+[![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) 
+[![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) 
+[![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ch.md) 
+[![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
 
-## 📜 Introdução
+## Descrição do Projeto
 
-O projeto Agrix é um projeto avaliativo desenvolvido no módulo de Java do curso de Desenvolvimento Web da Trybe. O projeto envolveu o uso de Java, Maven, Docker, MySQL e quase todo o ecossistema Spring. A aplicação foi construída com total liberdade de implementação, abrangendo desde a manipulação de código até a configuração.
+O projeto **Agrix** é uma aplicação web para gestão e monitoramento de fazendas, desenvolvida durante o módulo de Java do curso de Desenvolvimento Web da Trybe. O objetivo principal é auxiliar fazendas que buscam melhorar suas tecnologias e otimizar o uso sustentável do solo, gerenciando plantações, estoques de fertilizantes, entre outros recursos.
 
-A aplicação tem como objetivo gerenciar e monitorar as fazendas participantes que buscam aperfeiçoar suas tecnologias e usar o solo de forma responsável. O sistema inclui rotas para autenticação, autorização, cadastro de fazendas, plantações, fertilizantes e muito mais.
-
-## 📈 Diagrama Banco de dados
+<details>
+summary><h2>📈 Diagrama Banco de dados</h2></summary>
 
 ![Diagrama do banco de dados](./images/diagrama.png)
 
-## 🛤️ Rotas
+<details>
+  <summary><h2>Funcionalidades Implementadas</h2></summary>
+  - **Autenticação e Autorização**: Controle de acesso seguro utilizando Spring Security.
+  - **Gestão de Fazendas e Plantações**: Rotas para cadastro e monitoramento de fazendas, plantações e fertilizantes.
+  - **API REST**: Interface para interação com o sistema.
+  - **Gerenciamento de Erros**: Tratamento robusto de erros com Spring Web.
+  - **Execução em Docker**: Configuração completa para rodar a aplicação em containers Docker.
+</details>
 
-![Diagrama do banco de dados](./images/routeOne.png)
-![Diagrama do banco de dados](./images/routesTwo.png)
+<details>
+  <summary><h2>Habilidades Desenvolvidas</h2></summary>
+  - Uso avançado do **Spring Framework** para construir aplicações seguras e robustas.
+  - Implementação de **Spring Security** para autenticação e autorização de usuários.
+  - Desenvolvimento de uma **API REST** com rotas de CRUD para gestão agrícola.
+  - Integração com o **Spring Data JPA** para persistência de dados em MySQL.
+  - Uso de **Docker** para conteinerização da aplicação e ambiente de testes.
+  - Criação de testes unitários com **JUnit**.
+</details>
 
+<details>
+  <summary><h2>Como Executar</h2></summary>
+  
+  1. **Clonar o Repositório**:
+     ```bash
+     git clone https://github.com/sSamuelRocha91/agrix.git
+     ```
 
-## 🛠️ Funcionalidades Implementadas
+  2. **Acessar o Diretório**:
+     ```bash
+     cd agrix
+     ```
 
-- **Autenticação e Autorização**: Implementação de segurança usando Spring Security para gerenciar o acesso às rotas da aplicação.
-- **Cadastro de Entidades**: Rotas para o cadastro de fazendas, plantações e fertilizantes.
-- **Gestão de Estoque e Plantação**: Funcionalidades para gerenciar o estoque de fertilizantes e as plantações nas fazendas.
-- **API REST**: Desenvolvimento de uma API REST para interação com o sistema.
-- **Gerenciamento de Erros**: Implementação de gerenciamento de erros usando o Spring Web.
-- **Docker**: Criação de um Dockerfile para configuração da aplicação para execução no Docker.
+  3. **Compilar e Executar**:
+     Use Maven para rodar o projeto:
+     ```bash
+     mvn spring-boot:run
+     ```
 
-## 📚 Habilidades Desenvolvidas
+  4. **Executar os Testes**:
+     Para rodar testes unitários:
+     ```bash
+     mvn test
+     ```
 
-Durante o desenvolvimento deste projeto, foram trabalhadas as seguintes habilidades:
+  5. **Executar com Docker**:
+     Construa e rode o container Docker:
+     ```bash
+     docker compose up
+     ```
+</details>
 
-- **Spring Framework**: Utilização do Spring para construir a aplicação e implementar a segurança.
-- **Spring Security**: Aplicação de conhecimento para adicionar autenticação e autorização.
-- **Java Web**: Desenvolvimento de uma aplicação web utilizando Java.
-- **API REST**: Criação de rotas da API e implementação usando o Spring.
-- **Spring Data JPA**: Utilização para a persistência de dados em banco de dados.
-- **Docker**: Configuração da aplicação para ser executada em containers Docker.
-- **JUnit**: Implementação de testes com o framework JUnit.
-
-## 📋 Requisitos
-
-- **Java 17**
-- **Maven 3.8.1 ou superior**
-- **Docker** (opcional, para execução em containers)
-
-## 🔧 Instalação e Execução
-
-Siga as instruções abaixo para configurar e executar o projeto localmente:
-
-### 1. Clone o repositório
-
-```bash
-git clone https://github.com/seu-usuario/agrix.git
-```
-
-### 2. Navegue até o diretório do projeto
-
-```bash
-cd agrix
-```
-
-### 3. Compile e execute a aplicação
-
-Para compilar e executar a aplicação localmente, utilize o Maven:
-
-```bash
-mvn spring-boot:run
-```
-
-### 4. Execute os testes
-
-Para rodar os testes automatizados, utilize o comando:
-
-```bash
-mvn test
-```
-
-### 5. Configuração do Docker
-
-Para construir e executar a aplicação usando Docker, siga as instruções abaixo:
-
-1. Construa o container Docker:
-
-   ```bash
-   docker compose up
-   ```
-
-## 🗂️ Estrutura de Arquivos
-
-A estrutura do projeto é organizada da seguinte forma:
-
-```
-.
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── betrybe/
-│   │   │           └── agrix/
-│   │   │               ├── controller/        # Controladores da API
-│   │   │               ├── model/             # Modelos de dados
-│   │   │               ├── repository/        # Repositórios JPA
-│   │   │               ├── service/           # Serviços de aplicação
-│   │   │               └── AgrixApplication.java  # Classe principal
-│   ├── test/
-│   │   └── java/
-│   │       └── com/
-│   │           └── betrybe/
-│   │               └── agrix/
-│   │                   ├── controller/        # Testes dos controladores
-│   │                   ├── service/           # Testes dos serviços
-│   │                   └── repository/        # Testes dos repositórios
-├── Dockerfile                # Dockerfile para configuração da aplicação
-├── pom.xml                   # Arquivo de configuração do Maven
-└── README.md                 # Documentação do projeto
-```
-
-## 📦 Dependências
-
-As principais dependências do projeto são:
-
-- [Spring Boot](https://spring.io/projects/spring-boot): Framework para desenvolvimento de aplicações Java.
-- [Spring Security](https://spring.io/projects/spring-security): Framework para segurança e autenticação.
-- [Java JWT](https://github.com/auth0/java-jwt): Biblioteca para manipulação de JWT.
-- [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/): Conector JDBC para MySQL.
-- [JUnit](https://junit.org/junit5/): Framework para testes unitários.
-
-## Outros projetos:
-
-- 🗳️ [Sistema de Votação](https://github.com/SamuelRocha91/sistemaDeVotacao)
-- 🏛️ [Localizador de museus](https://github.com/SamuelRocha91/localizadorDeMuseus)
-- 📃 [Regras de progressão](https://github.com/SamuelRocha91/project_rule_of_progression)
-
+<details>
+  <summary><h2>Outros Projetos</h2></summary>
+  - 🗳️ [Sistema de Votação](https://github.com/SamuelRocha91/sistemaDeVotacao)
+  - 🏛️ [Localizador de Museus](https://github.com/SamuelRocha91/localizadorDeMuseus)
+  - 📃 [Regras de Progressão](https://github.com/SamuelRocha91/project_rule_of_progression)
+</details>
