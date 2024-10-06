@@ -13,7 +13,7 @@
 O projeto **Agrix** é uma aplicação web para gestão e monitoramento de fazendas, desenvolvida durante o módulo de Java do curso de Desenvolvimento Web da Trybe. O objetivo principal é auxiliar fazendas que buscam melhorar suas tecnologias e otimizar o uso sustentável do solo, gerenciando plantações, estoques de fertilizantes, entre outros recursos.
 
 <details>
-summary><h2>📈 Diagrama Banco de dados</h2></summary>
+<summary><h2>📈 Diagrama Banco de dados</h2></summary>
 
 ![Diagrama do banco de dados](./images/diagrama.png)
 </details>
