@@ -1,141 +1,76 @@
-# <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 🌱 Agrix - 农场管理与监控 <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 
+# <img src="https://cdn-icons-png.flaticon.com/128/226/226777.png" alt="Java Projects Logo" width="42" height="30" /> 🌱 Agrix - 农场管理与监控 <img src="https://cdn-icons-png.flaticon.com/128/226/226777.png" alt="Java Projects Logo" width="42" height="30" />
 
-## 🌐 [![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) [![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) [![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) [![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) [![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/Agrix/Agrix/blob/main/README_ch.md)) [![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
+## 🌐 
+[![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) 
+[![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) 
+[![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) 
+[![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) 
+[![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ch.md) 
+[![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
 
+## 项目描述
 
-## 📜 介绍
+**Agrix** 项目是一个用于农场管理和监控的Web应用程序，作为 Trybe Web开发课程中 Java 模块的一部分开发。主要目的是帮助农场提高技术，优化可持续土地利用，通过管理作物、化肥库存等资源来实现。
 
-Agrix 项目是 Trybe 的 Web 开发课程中的一个评估项目。该项目涉及使用 Java、Maven、Docker、MySQL 和几乎整个 Spring 生态系统。应用程序的构建完全自由，包括从代码处理到配置的各个方面。
+<details>
+<summary><h2>📈 数据库图表</h2></summary>
 
-该应用程序的目标是管理和监控参与的农场，帮助他们提高技术水平，并负责任地使用土地。系统包括用于身份验证、授权、农场注册、种植、肥料管理等的路由。
+![数据库图表](./images/diagrama.png)
 
-## 📈 数据库图
+<details>
+  <summary><h2>已实现的功能</h2></summary>
+  - **身份验证与授权**: 使用 Spring Security 实现安全的访问控制。
+  - **农场与作物管理**: 提供农场、作物和化肥的注册和监控路线。
+  - **API REST**: 提供与系统交互的接口。
+  - **错误管理**: 使用 Spring Web 处理强大的错误管理。
+  - **Docker 运行**: 完整的设置，用于在 Docker 容器中运行应用程序。
+</details>
 
-![数据库图](./images/diagrama.png)
+<details>
+  <summary><h2>开发技能</h2></summary>
+  - 使用 **Spring Framework** 开发安全可靠的应用程序。
+  - 使用 **Spring Security** 实现用户的身份验证与授权。
+  - 开发 **API REST**，提供农业管理的 CRUD 路由。
+  - 集成 **Spring Data JPA**，将数据持久化到 MySQL。
+  - 使用 **Docker** 容器化应用程序和测试环境。
+  - 使用 **JUnit** 创建单元测试。
+</details>
 
-## 🛤️ 路由
+<details>
+  <summary><h2>如何运行</h2></summary>
+  
+  1. **克隆仓库**:
+     ```bash
+     git clone https://github.com/SamuelRocha91/agrix.git
+     ```
 
-![路由图](./images/routeOne.png)  
-![路由图](./images/routesTwo.png)
+  2. **进入目录**:
+     ```bash
+     cd agrix
+     ```
 
-## 🛠️ 实现的功能
+  3. **编译并运行**:
+     使用 Maven 运行项目:
+     ```bash
+     mvn spring-boot:run
+     ```
 
-- **身份验证和授权**：使用 Spring Security 实现安全性，以管理对应用程序路由的访问。
-- **实体注册**：用于注册农场、种植和肥料的路由。
-- **库存和种植管理**：管理农场中肥料库存和种植的功能。
-- **REST API**：开发 REST API 以与系统进行交互。
-- **错误处理**：使用 Spring Web 实现错误管理。
-- **Docker**：创建 Dockerfile 以配置应用程序在 Docker 中运行。
+  4. **运行测试**:
+     运行单元测试:
+     ```bash
+     mvn test
+     ```
 
-## 📚 开发的技能
+  5. **使用 Docker 运行**:
+     构建并运行 Docker 容器:
+     ```bash
+     docker compose up
+     ```
+</details>
 
-在这个项目的开发过程中，练习了以下技能：
-
-- **Spring Framework**：使用 Spring 构建应用程序并实现安全功能。
-- **Spring Security**：应用知识添加身份验证和授权。
-- **Java Web**：使用 Java 开发 Web 应用程序。
-- **REST API**：创建 API 路由并使用 Spring 实现。
-- **Spring Data JPA**：用于数据持久化。
-- **Docker**：配置应用程序以在 Docker 容器中运行。
-- **JUnit**：使用 JUnit 框架进行测试。
-
-## 📋 要求
-
-- **Java 17**
-- **Maven 3.8.1 或更高版本**
-- **Docker**（可选，用于容器运行）
-
-## 🔧 安装和运行
-
-请按照以下步骤在本地配置和运行项目：
-
-### 1. 克隆仓库
-
-```bash
-git clone git@github.com:SamuelRocha91/Agrix.git
-```
-
-### 2. 进入项目目录
-
-```bash
-cd agrix
-```
-
-### 3. 编译和运行应用程序
-
-要在本地编译和运行应用程序，请使用 Maven：
-
-```bash
-mvn spring-boot:run
-```
-
-### 4. 运行测试
-
-要运行自动化测试，请使用以下命令：
-
-```bash
-mvn test
-```
-
-### 5. Docker 配置
-
-要使用 Docker 构建和运行应用程序，请按照以下步骤操作：
-
-1. 构建 Docker 镜像：
-
-   ```bash
-   docker build -t agrix .
-   ```
-
-2. 运行 Docker 容器：
-
-   ```bash
-   docker run -p 8080:8080 agrix
-   ```
-
-## 🗂️ 文件结构
-
-项目结构如下：
-
-```
-.
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── betrybe/
-│   │   │           └── agrix/
-│   │   │               ├── controller/        # API 控制器
-│   │   │               ├── model/             # 数据模型
-│   │   │               ├── repository/        # JPA 仓储
-│   │   │               ├── service/           # 应用服务
-│   │   │               └── AgrixApplication.java  # 主类
-│   ├── test/
-│   │   └── java/
-│   │       └── com/
-│   │           └── betrybe/
-│   │               └── agrix/
-│   │                   ├── controller/        # 控制器测试
-│   │                   ├── service/           # 服务测试
-│   │                   └── repository/        # 仓储测试
-├── Dockerfile                # 配置应用程序的 Dockerfile
-├── pom.xml                   # Maven 配置文件
-└── README.md                 # 项目文档
-```
-
-## 📦 依赖项
-
-项目的主要依赖项包括：
-
-- [Spring Boot](https://spring.io/projects/spring-boot): Java 应用程序开发框架。
-- [Spring Security](https://spring.io/projects/spring-security): 安全和身份验证框架。
-- [Java JWT](https://github.com/auth0/java-jwt): 用于处理 JWT 的库。
-- [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/): MySQL 的 JDBC 连接器。
-- [JUnit](https://junit.org/junit5/): 单元测试框架。
-
-
-## 其他项目
-
-- 🗳️ [Sistema de Votação](https://github.com/SamuelRocha91/sistemaDeVotacao/Agrix/Agrix/blob/main/README_ch.md)
-- 🏛️ [Localizador de museus](https://github.com/SamuelRocha91/localizadorDeMuseus/Agrix/Agrix/blob/main/README_ch.md)
-- 📃 [Regras de progressão](https://github.com/SamuelRocha91/project_rule_of_progression/Agrix/Agrix/blob/main/README_ch.md)
+<details>
+  <summary><h2>其他项目</h2></summary>
+  - 🗳️ [投票系统](https://github.com/SamuelRocha91/sistemaDeVotacao/blob/main/README_ch.md)
+  - 🏛️ [博物馆定位器](https://github.com/SamuelRocha91/localizadorDeMuseus/blob/main/README_ch.md)
+  - 📃 [进展规则](https://github.com/SamuelRocha91/project_rule_of_progression/blob/main/README_ch.md)
+</details>

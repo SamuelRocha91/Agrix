@@ -1,135 +1,76 @@
-# <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" /> 🌱 Agrix - Farm Management and Monitoring <img src="https://blog.geekhunter.com.br/wp-content/uploads/2020/07/pngwing.com_.png" alt="Java Projects Logo" width="52" height="40" />
+# <img src="https://cdn-icons-png.flaticon.com/128/226/226777.png" alt="Java Projects Logo" width="42" height="30" /> 🌱 Agrix - Farm Management and Monitoring  <img src="https://cdn-icons-png.flaticon.com/128/226/226777.png" alt="Java Projects Logo" width="42" height="30" />
 
+## 🌐 
+[![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) 
+[![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) 
+[![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) 
+[![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) 
+[![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ch.md) 
+[![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
 
-## 🌐 [![Português](https://img.shields.io/badge/Português-green)](https://github.com/SamuelRocha91/Agrix/blob/main/README.md) [![Español](https://img.shields.io/badge/Español-yellow)](https://github.com/SamuelRocha91/Agrix/blob/main/README_es.md) [![English](https://img.shields.io/badge/English-blue)](https://github.com/SamuelRocha91/Agrix/blob/main/README_en.md) [![Русский](https://img.shields.io/badge/Русский-lightgrey)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ru.md) [![中文](https://img.shields.io/badge/中文-red)](https://github.com/SamuelRocha91/Agrix/Agrix/blob/main/README_ch.md) [![العربية](https://img.shields.io/badge/العربية-orange)](https://github.com/SamuelRocha91/Agrix/blob/main/README_ar.md)
+## Project Description
 
+The **Agrix** project is a web application for farm management and monitoring, developed during the Java module of Trybe's Web Development course. The main goal is to assist farms in improving their technologies and optimizing sustainable land use by managing crops, fertilizer inventories, and other resources.
 
-## 📜 Introduction
-
-The Agrix project is an evaluative project developed in the Java module of the Trybe Web Development course. The project involved the use of Java, Maven, Docker, MySQL, and almost the entire Spring ecosystem. The application was built with full implementation freedom, covering everything from code manipulation to configuration.
-
-The application aims to manage and monitor participating farms that seek to improve their technologies and use the land responsibly. The system includes routes for authentication, authorization, farm registration, crop management, fertilizers, and more.
-
-## 📈 Database Diagram
+<details>
+<summary><h2>📈 Database Diagram</h2></summary>
 
 ![Database Diagram](./images/diagrama.png)
 
-## 🛤️ Routes
+<details>
+  <summary><h2>Implemented Features</h2></summary>
+  - **Authentication and Authorization**: Secure access control using Spring Security.
+  - **Farm and Crop Management**: Routes for registering and monitoring farms, crops, and fertilizers.
+  - **REST API**: Interface for system interaction.
+  - **Error Management**: Robust error handling with Spring Web.
+  - **Docker Execution**: Full setup for running the application in Docker containers.
+</details>
 
-![Routes Diagram](./images/routeOne.png)
-![Routes Diagram](./images/routesTwo.png)
+<details>
+  <summary><h2>Skills Developed</h2></summary>
+  - Advanced use of the **Spring Framework** to build secure and robust applications.
+  - Implementation of **Spring Security** for user authentication and authorization.
+  - Development of a **REST API** with CRUD routes for agricultural management.
+  - Integration with **Spring Data JPA** for data persistence in MySQL.
+  - Use of **Docker** for containerizing the application and test environment.
+  - Creation of unit tests with **JUnit**.
+</details>
 
-## 🛠️ Implemented Features
+<details>
+  <summary><h2>How to Run</h2></summary>
+  
+  1. **Clone the Repository**:
+     ```bash
+     git clone https://github.com/SamuelRocha91/agrix.git
+     ```
 
-- **Authentication and Authorization**: Security implementation using Spring Security to manage access to the application's routes.
-- **Entity Registration**: Routes for registering farms, crops, and fertilizers.
-- **Inventory and Crop Management**: Features to manage the inventory of fertilizers and crops on the farms.
-- **REST API**: Development of a REST API for system interaction.
-- **Error Handling**: Implementation of error handling using Spring Web.
-- **Docker**: Creation of a Dockerfile to configure the application for Docker execution.
+  2. **Access the Directory**:
+     ```bash
+     cd agrix
+     ```
 
-## 📚 Skills Developed
+  3. **Build and Run**:
+     Use Maven to run the project:
+     ```bash
+     mvn spring-boot:run
+     ```
 
-During the development of this project, the following skills were worked on:
+  4. **Run Tests**:
+     To run unit tests:
+     ```bash
+     mvn test
+     ```
 
-- **Spring Framework**: Using Spring to build the application and implement security.
-- **Spring Security**: Applying knowledge to add authentication and authorization.
-- **Java Web**: Developing a web application using Java.
-- **REST API**: Creating API routes and implementation using Spring.
-- **Spring Data JPA**: Using it for data persistence in the database.
-- **Docker**: Configuring the application to run in Docker containers.
-- **JUnit**: Implementing tests with the JUnit framework.
+  5. **Run with Docker**:
+     Build and run the Docker container:
+     ```bash
+     docker compose up
+     ```
+</details>
 
-## 📋 Requirements
-
-- **Java 17**
-- **Maven 3.8.1 or higher**
-- **Docker** (optional, for container execution)
-
-## 🔧 Installation and Running
-
-Follow the instructions below to set up and run the project locally:
-
-### 1. Clone the repository
-
-```bash
-git clone git@github.com:SamuelRocha91/Agrix.git
-```
-
-### 2. Navigate to the project directory
-
-```bash
-cd agrix
-```
-
-### 3. Compile and run the application
-
-To compile and run the application locally, use Maven:
-
-```bash
-mvn spring-boot:run
-```
-
-### 4. Run the tests
-
-To run automated tests, use the command:
-
-```bash
-mvn test
-```
-
-### 5. Docker Setup
-
-To build and run the application using Docker, follow the instructions below:
-
-1. Build the Docker container:
-
-   ```bash
-   docker-compose up
-   ```
-
-## 🗂️ File Structure
-
-The project structure is organized as follows:
-
-```
-.
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/
-│   │   │       └── betrybe/
-│   │   │           └── agrix/
-│   │   │               ├── controller/        # API controllers
-│   │   │               ├── model/             # Data models
-│   │   │               ├── repository/        # JPA repositories
-│   │   │               ├── service/           # Application services
-│   │   │               └── AgrixApplication.java  # Main class
-│   ├── test/
-│   │   └── java/
-│   │       └── com/
-│   │           └── betrybe/
-│   │               └── agrix/
-│   │                   ├── controller/        # Controller tests
-│   │                   ├── service/           # Service tests
-│   │                   └── repository/        # Repository tests
-├── Dockerfile                # Dockerfile for application configuration
-├── pom.xml                   # Maven configuration file
-└── README.md                 # Project documentation
-```
-
-## 📦 Dependencies
-
-The main dependencies of the project are:
-
-- [Spring Boot](https://spring.io/projects/spring-boot): Framework for developing Java applications.
-- [Spring Security](https://spring.io/projects/spring-security): Framework for security and authentication.
-- [Java JWT](https://github.com/auth0/java-jwt): Library for JWT manipulation.
-- [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/): JDBC connector for MySQL.
-- [JUnit](https://junit.org/junit5/): Framework for unit testing.
-
-## Other Projects
-
-- 🗳️ [Sistema de Votação](https://github.com/SamuelRocha91/sistemaDeVotacao/blob/main/README_en.md)
-- 🏛️ [Localizador de museus](https://github.com/SamuelRocha91/localizadorDeMuseus/blob/main/README_en.md)
-- 📃 [Regras de progressão](https://github.com/SamuelRocha91/project_rule_of_progression/blob/main/README_en.md)
+<details>
+  <summary><h2>Other Projects</h2></summary>
+  - 🗳️ [Voting System](https://github.com/SamuelRocha91/sistemaDeVotacao/blob/main/README_en.md)
+  - 🏛️ [Museum Locator](https://github.com/SamuelRocha91/localizadorDeMuseus/blob/main/README_en.md)
+  - 📃 [Progression Rules](https://github.com/SamuelRocha91/project_rule_of_progression/blob/main/README_en.md)
+</details>
