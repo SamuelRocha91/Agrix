@@ -20,6 +20,7 @@
 
 <details>
   <summary><h2>已实现的功能</h2></summary>
+
   - **身份验证与授权**: 使用 Spring Security 实现安全的访问控制。
   - **农场与作物管理**: 提供农场、作物和化肥的注册和监控路线。
   - **API REST**: 提供与系统交互的接口。
@@ -29,6 +30,7 @@
 
 <details>
   <summary><h2>开发技能</h2></summary>
+
   - 使用 **Spring Framework** 开发安全可靠的应用程序。
   - 使用 **Spring Security** 实现用户的身份验证与授权。
   - 开发 **API REST**，提供农业管理的 CRUD 路由。
@@ -71,6 +73,7 @@
 
 <details>
   <summary><h2>其他项目</h2></summary>
+  
   - 🗳️ [投票系统](https://github.com/SamuelRocha91/sistemaDeVotacao/blob/main/README_ch.md)
   - 🏛️ [博物馆定位器](https://github.com/SamuelRocha91/localizadorDeMuseus/blob/main/README_ch.md)
   - 📃 [进展规则](https://github.com/SamuelRocha91/project_rule_of_progression/blob/main/README_ch.md)

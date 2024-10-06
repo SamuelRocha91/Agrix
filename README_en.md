@@ -20,6 +20,7 @@ The **Agrix** project is a web application for farm management and monitoring, d
 
 <details>
   <summary><h2>Implemented Features</h2></summary>
+
   - **Authentication and Authorization**: Secure access control using Spring Security.
   - **Farm and Crop Management**: Routes for registering and monitoring farms, crops, and fertilizers.
   - **REST API**: Interface for system interaction.
@@ -29,6 +30,7 @@ The **Agrix** project is a web application for farm management and monitoring, d
 
 <details>
   <summary><h2>Skills Developed</h2></summary>
+
   - Advanced use of the **Spring Framework** to build secure and robust applications.
   - Implementation of **Spring Security** for user authentication and authorization.
   - Development of a **REST API** with CRUD routes for agricultural management.
@@ -71,6 +73,7 @@ The **Agrix** project is a web application for farm management and monitoring, d
 
 <details>
   <summary><h2>Other Projects</h2></summary>
+  
   - 🗳️ [Voting System](https://github.com/SamuelRocha91/sistemaDeVotacao/blob/main/README_en.md)
   - 🏛️ [Museum Locator](https://github.com/SamuelRocha91/localizadorDeMuseus/blob/main/README_en.md)
   - 📃 [Progression Rules](https://github.com/SamuelRocha91/project_rule_of_progression/blob/main/README_en.md)

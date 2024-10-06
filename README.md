@@ -20,6 +20,7 @@ O projeto **Agrix** é uma aplicação web para gestão e monitoramento de fazen
 
 <details>
   <summary><h2>Funcionalidades Implementadas</h2></summary>
+
   - **Autenticação e Autorização**: Controle de acesso seguro utilizando Spring Security.
   - **Gestão de Fazendas e Plantações**: Rotas para cadastro e monitoramento de fazendas, plantações e fertilizantes.
   - **API REST**: Interface para interação com o sistema.
@@ -29,6 +30,7 @@ O projeto **Agrix** é uma aplicação web para gestão e monitoramento de fazen
 
 <details>
   <summary><h2>Habilidades Desenvolvidas</h2></summary>
+
   - Uso avançado do **Spring Framework** para construir aplicações seguras e robustas.
   - Implementação de **Spring Security** para autenticação e autorização de usuários.
   - Desenvolvimento de uma **API REST** com rotas de CRUD para gestão agrícola.
@@ -42,7 +44,7 @@ O projeto **Agrix** é uma aplicação web para gestão e monitoramento de fazen
   
   1. **Clonar o Repositório**:
      ```bash
-     git clone https://github.com/sSamuelRocha91/agrix.git
+     git clone https://github.com/SamuelRocha91/agrix.git
      ```
 
   2. **Acessar o Diretório**:
@@ -71,6 +73,7 @@ O projeto **Agrix** é uma aplicação web para gestão e monitoramento de fazen
 
 <details>
   <summary><h2>Outros Projetos</h2></summary>
+  
   - 🗳️ [Sistema de Votação](https://github.com/SamuelRocha91/sistemaDeVotacao)
   - 🏛️ [Localizador de Museus](https://github.com/SamuelRocha91/localizadorDeMuseus)
   - 📃 [Regras de Progressão](https://github.com/SamuelRocha91/project_rule_of_progression)
