@@ -20,6 +20,7 @@ El proyecto **Agrix** es una aplicación web para la gestión y monitoreo de gra
 
 <details>
   <summary><h2>Funciones Implementadas</h2></summary>
+
   - **Autenticación y Autorización**: Control de acceso seguro utilizando Spring Security.
   - **Gestión de Granjas y Cultivos**: Rutas para el registro y monitoreo de granjas, cultivos y fertilizantes.
   - **API REST**: Interfaz para la interacción con el sistema.
@@ -29,6 +30,7 @@ El proyecto **Agrix** es una aplicación web para la gestión y monitoreo de gra
 
 <details>
   <summary><h2>Habilidades Desarrolladas</h2></summary>
+
   - Uso avanzado del **Spring Framework** para construir aplicaciones seguras y robustas.
   - Implementación de **Spring Security** para la autenticación y autorización de usuarios.
   - Desarrollo de una **API REST** con rutas CRUD para la gestión agrícola.
@@ -71,6 +73,7 @@ El proyecto **Agrix** es una aplicación web para la gestión y monitoreo de gra
 
 <details>
   <summary><h2>Otros Proyectos</h2></summary>
+  
   - 🗳️ [Sistema de Votación](https://github.com/SamuelRocha91/sistemaDeVotacao/blob/main/README_es.md)
   - 🏛️ [Localizador de Museos](https://github.com/SamuelRocha91/localizadorDeMuseus/blob/main/README_es.md)
   - 📃 [Reglas de Progresión](https://github.com/SamuelRocha91/project_rule_of_progression/blob/main/README_es.md)
