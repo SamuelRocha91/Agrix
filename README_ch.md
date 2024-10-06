@@ -16,6 +16,7 @@
 <summary><h2>📈 数据库图表</h2></summary>
 
 ![数据库图表](./images/diagrama.png)
+</details>
 
 <details>
   <summary><h2>已实现的功能</h2></summary>

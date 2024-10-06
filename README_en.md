@@ -16,6 +16,7 @@ The **Agrix** project is a web application for farm management and monitoring, d
 <summary><h2>📈 Database Diagram</h2></summary>
 
 ![Database Diagram](./images/diagrama.png)
+</details>
 
 <details>
   <summary><h2>Implemented Features</h2></summary>
